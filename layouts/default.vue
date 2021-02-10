@@ -1,6 +1,17 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="pos_relative">
+    <vs-navbar class="nav box_shadow" color="#303030" text-white square>
+      <template #left>
+        <h2>DartCaller</h2>
+      </template>
+      <template #right>
+        <vs-button color="#303030"><p>Game</p></vs-button>
+        <vs-button color="#303030"><p>Profile</p></vs-button>
+        <vs-button color="#303030"><p>Settings</p></vs-button>
+        <vs-button color="#303030"><p>Logout</p></vs-button>
+      </template>
+    </vs-navbar>
+    <Nuxt class="flex_grow" />
   </div>
 </template>
 
@@ -44,18 +55,14 @@ body,
   position: sticky;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.pos_relative {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.flex_grow {
+  flex-grow: 1;
 }
 </style>
