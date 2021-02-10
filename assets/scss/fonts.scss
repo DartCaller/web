@@ -1,0 +1,22 @@
+h1 {
+  font-size: 64px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+p {
+  font-size: 18px;
+  font-weight: normal;
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.small {
+    font-size: 14px;
+  }
+}
