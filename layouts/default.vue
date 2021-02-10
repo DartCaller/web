@@ -5,15 +5,26 @@
         <h2>DartCaller</h2>
       </template>
       <template #right>
-        <vs-button color="#303030"><p>Game</p></vs-button>
-        <vs-button color="#303030"><p>Profile</p></vs-button>
-        <vs-button color="#303030"><p>Settings</p></vs-button>
-        <vs-button color="#303030"><p>Logout</p></vs-button>
+        <styledButton>Game</styledButton>
+        <styledButton>Profile</styledButton>
+        <styledButton>Settings</styledButton>
+        <styledButton>Logout</styledButton>
       </template>
     </vs-navbar>
     <Nuxt class="flex_grow" />
   </div>
 </template>
+
+<script>
+import styledButton from '~/components/common/Button'
+
+export default {
+  name: 'DefaultLayout',
+  components: {
+    styledButton,
+  },
+}
+</script>
 
 <style lang="scss">
 html {
