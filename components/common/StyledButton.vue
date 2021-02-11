@@ -1,7 +1,12 @@
 <template>
   <vs-button :color="buttonColor">
-    <component :is="activeIcon" v-if="activeIcon" class="icon" />
-    <p class="small"><slot /></p>
+    <component
+      :is="activeIcon"
+      v-if="activeIcon"
+      class="icon"
+      :class="{ small: smallText }"
+    />
+    <p :class="{ small: smallText }"><slot /></p>
   </vs-button>
 </template>
 
@@ -22,6 +27,7 @@ export default {
   },
   props: {
     primary: Boolean,
+    smallText: Boolean,
     icon: {
       default: null,
       type: String,
@@ -47,8 +53,13 @@ export default {
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   padding-right: 5px;
+
+  &.small {
+    width: 20px;
+    height: 20px;
+  }
 }
 </style>

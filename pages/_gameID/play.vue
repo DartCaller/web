@@ -4,9 +4,9 @@
       <scoreTable :scores="scores" :players="players" />
     </div>
     <div class="action__card box_shadow">
-      <styledButton icon="plus">New Game</styledButton>
-      <styledButton icon="pencil">Correct Score</styledButton>
-      <styledButton icon="history">Revert last Dart</styledButton>
+      <styledButton icon="plus" small-text>New Game</styledButton>
+      <styledButton icon="pencil" small-text>Correct Score</styledButton>
+      <styledButton icon="history" small-text>Revert last Dart</styledButton>
     </div>
     <div class="current_player__card box_shadow">
       <currentPlayer
