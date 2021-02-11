@@ -15,7 +15,9 @@
         :points-remaining="pointsRemainingForCurrentPlayer"
       />
     </div>
-    <div class="statistics__card box_shadow"></div>
+    <div class="statistics__card box_shadow">
+      <h2>Coming Soon</h2>
+    </div>
   </div>
 </template>
 
@@ -86,6 +88,9 @@ export default {
 
   .statistics__card {
     grid-area: statistics__card;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .current_player__card {
