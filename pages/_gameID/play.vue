@@ -64,8 +64,8 @@ export default {
   padding: 30px 250px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1.2fr 5fr 5fr;
-  column-gap: 30px;
-  row-gap: 30px;
+  column-gap: 20px;
+  row-gap: 20px;
   grid-template-areas:
     'score__card action__card'
     'score__card current_player__card'
