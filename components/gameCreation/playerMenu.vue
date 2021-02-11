@@ -2,10 +2,19 @@
   <div>
     <h2>Players</h2>
     <div class="player_list">
-      <playerRow />
+      <playerRow
+        v-for="(player, index) in players"
+        :key="player.name + player.account"
+        :player="player"
+        class="player_row"
+        @input="(name) => (player.name = name)"
+        @delete="players.splice(index, 1)"
+      />
     </div>
     <div class="addPlayer">
-      <styled-button icon="plus"> Add Player </styled-button>
+      <styled-button icon="plus" @click.native="addPlayer">
+        Add Player
+      </styled-button>
     </div>
   </div>
 </template>
@@ -21,14 +30,23 @@ export default {
     playerRow,
   },
   data: () => ({
-    players: [],
+    players: [{ name: '', account: false }],
   }),
+  methods: {
+    addPlayer() {
+      this.players.push({ name: '', account: false })
+    },
+  },
 }
 </script>
 
 <style scoped lang="scss">
 h2 {
   margin-bottom: 15px;
+}
+
+.player_row {
+  margin: 10px 0;
 }
 
 .addPlayer {

@@ -4,13 +4,25 @@
       <vs-avatar size="30" color="#303030">
         <img src="~/assets/images/player.png" alt="player image" />
       </vs-avatar>
-      <p class="name">Lewe</p>
+      <div class="name">
+        <vs-input
+          v-if="editMode || nameIsEmpty"
+          :value="player.name"
+          placeholder="Name"
+          @input="newName = $event"
+          @blur="$emit('input', newName)"
+          @keyup.enter="$emit('input', newName)"
+        />
+        <p v-else @click="editMode = true">
+          {{ player.name }}
+        </p>
+      </div>
     </div>
     <div>
-      <p class="gamesPlayed">
+      <p v-if="!nameIsEmpty" class="gamesPlayed">
         {{ Math.floor(Math.random() * Math.floor(1000)) }} games
       </p>
-      <delete-svg />
+      <delete-svg class="delete_button" @click="$emit('delete')" />
     </div>
   </div>
 </template>
@@ -21,6 +33,21 @@ import deleteSvg from '~/assets/images/x.svg?inline'
 export default {
   name: 'PlayerRow',
   components: { deleteSvg },
+  props: {
+    player: {
+      type: Object,
+      required: true,
+    },
+  },
+  data: () => ({
+    editMode: false,
+    newName: '',
+  }),
+  computed: {
+    nameIsEmpty() {
+      return this.player.name === ''
+    },
+  },
 }
 </script>
 
@@ -29,6 +56,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .delete_button {
+    cursor: pointer;
+  }
 
   > * {
     display: flex;
