@@ -1,13 +1,35 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="pos_relative">
+    <vs-navbar class="nav box_shadow" color="#303030" text-white square>
+      <template #left>
+        <h2>DartCaller</h2>
+      </template>
+      <template #right>
+        <styledButton>Game</styledButton>
+        <styledButton>Profile</styledButton>
+        <styledButton>Settings</styledButton>
+        <styledButton>Logout</styledButton>
+      </template>
+    </vs-navbar>
+    <Nuxt class="flex_grow" />
   </div>
 </template>
 
-<style>
+<script>
+import styledButton from '~/components/common/StyledButton'
+
+export default {
+  name: 'DefaultLayout',
+  components: {
+    styledButton,
+  },
+}
+</script>
+
+<style lang="scss">
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Tahoma', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -17,39 +39,41 @@ html {
   box-sizing: border-box;
 }
 
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100%;
+  background-color: $grey;
+  background-image: url('~assets/images/DartboardBackground.svg');
+  background-position: center;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
+  color: white;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.box_shadow {
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.6);
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.nav {
+  padding: 10px;
+  position: sticky;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.pos_relative {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.flex_grow {
+  flex-grow: 1;
 }
 </style>

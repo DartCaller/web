@@ -1,0 +1,20 @@
+$white: #fff;
+$black: #000;
+$green: #14A76C;
+$red: #EE5622;
+$grey: #303030;
+$lightgrey: #454545;
+
+:root {
+  --vs-gray-2: 69, 69, 69;
+  --vs-gray-3: 69, 69, 69;
+  --vs-gray-4: 69, 69, 69;
+  --vs-text: 255, 255, 255;
+  --vs-background: 69, 69, 69;
+}
+
+.vs-switch__circle {
+  color: white !important;
+
+  --vs-background: 255, 255, 255;
+}
