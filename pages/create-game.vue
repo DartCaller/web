@@ -9,7 +9,7 @@
         <settingsMenu />
       </div>
     </div>
-    <styled-button primary>Start Game</styled-button>
+    <styled-button primary @click.native="startGame">Start Game</styled-button>
   </div>
 </template>
 
@@ -21,6 +21,13 @@ import settingsMenu from '~/components/gameCreation/settingsMenu.vue'
 export default {
   name: 'CreateGame',
   components: { styledButton, playerMenu, settingsMenu },
+  methods: {
+    startGame() {
+      this.$router.push({
+        path: '/123/play',
+      })
+    },
+  },
 }
 </script>
 
