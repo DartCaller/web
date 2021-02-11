@@ -2,7 +2,7 @@
   <table>
     <thead>
       <tr>
-        <th v-for="(player, h) in players" :key="h">
+        <th v-for="(player, h) in players" :key="h" class="colored">
           {{ player }}
         </th>
       </tr>
@@ -42,7 +42,6 @@ table {
   border-spacing: 0 5px;
 
   thead * {
-    color: $green;
     border-bottom: 2px solid white;
   }
 
