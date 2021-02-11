@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import styledButton from '~/components/common/Button'
+import styledButton from '~/components/common/StyledButton'
 import scoreTable from '~/components/scoreTable'
 import currentPlayer from '~/components/inGame/currentPlayer/currentPlayer'
 

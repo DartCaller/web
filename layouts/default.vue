@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import styledButton from '~/components/common/Button'
+import styledButton from '~/components/common/StyledButton'
 
 export default {
   name: 'DefaultLayout',

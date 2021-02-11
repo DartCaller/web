@@ -13,7 +13,7 @@ import plus from '~/assets/images/plus.svg?inline'
 /* eslint-disable vue/no-unused-components */
 
 export default {
-  name: 'Button',
+  name: 'StyledButton',
   components: {
     check,
     history,
