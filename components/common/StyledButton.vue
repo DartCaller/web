@@ -1,5 +1,5 @@
 <template>
-  <vs-button color="#303030">
+  <vs-button :color="buttonColor">
     <component :is="activeIcon" v-if="activeIcon" class="icon" />
     <p class="small"><slot /></p>
   </vs-button>
@@ -21,6 +21,7 @@ export default {
     plus,
   },
   props: {
+    primary: Boolean,
     icon: {
       default: null,
       type: String,
@@ -30,6 +31,9 @@ export default {
     icons: ['check', 'history', 'pencil', 'plus'],
   }),
   computed: {
+    buttonColor() {
+      return this.primary ? '#14A76C' : '#303030'
+    },
     activeIcon() {
       return this.icon && this.icons.includes(this.icon) ? this.icon : null
     },
