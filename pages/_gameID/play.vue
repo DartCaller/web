@@ -8,7 +8,13 @@
       <styledButton icon="pencil">Correct Score</styledButton>
       <styledButton icon="history">Revert last Dart</styledButton>
     </div>
-    <div class="current_player__card box_shadow"></div>
+    <div class="current_player__card box_shadow">
+      <currentPlayer
+        :scores-per-dart="scoresPerDart"
+        :current-player="currentPlayer"
+        :points-remaining="pointsRemainingForCurrentPlayer"
+      />
+    </div>
     <div class="statistics__card box_shadow"></div>
   </div>
 </template>
@@ -16,13 +22,15 @@
 <script>
 import styledButton from '~/components/common/Button'
 import scoreTable from '~/components/scoreTable'
+import currentPlayer from '~/components/inGame/currentPlayer/currentPlayer'
 
 export default {
   name: 'InGame',
-  components: { styledButton, scoreTable },
+  components: { styledButton, scoreTable, currentPlayer },
   data: () => ({
     players: ['Lewe', 'Heiko', 'Timon'],
-    playerIndex: 0,
+    playerIndex: 1,
+    scoresPerDart: [60, 5],
     scores: [
       [501, 501, 501],
       [455, 430, 480],
@@ -36,12 +44,14 @@ export default {
       [40, 72, 100],
       [0, 40, 40],
       ['', 40, 0],
-      ['', 0, ''],
     ],
   }),
   computed: {
     currentPlayer() {
       return this.players[this.playerIndex]
+    },
+    pointsRemainingForCurrentPlayer() {
+      return this.scores[this.scores.length - 1][this.playerIndex]
     },
   },
 }
@@ -80,6 +90,7 @@ export default {
 
   .current_player__card {
     grid-area: current_player__card;
+    padding: 15px 40px;
   }
 
   .action__card {
