@@ -45,7 +45,7 @@ body,
 #__layout {
   height: 100%;
   background-color: $grey;
-  background-image: url('~assets/images/DartboardBackground2.svg');
+  background-image: url('~assets/images/DartboardBackground.svg');
   background-position: center;
 }
 
