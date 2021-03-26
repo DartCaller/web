@@ -82,4 +82,15 @@ a {
 .flex_grow {
   flex-grow: 1;
 }
+
+.vs-input {
+  font-family: 'Tahoma', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+
+  &:focus {
+    padding-left: 10px;
+  }
+}
 </style>
