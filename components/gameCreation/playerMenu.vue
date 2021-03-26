@@ -7,7 +7,7 @@
         :key="player.name + player.account"
         :player="player"
         class="player_row"
-        @input="(name) => (player.name = name)"
+        @input="(name) => handlePlayerNameInput(name, index)"
         @delete="players.splice(index, 1)"
       />
     </div>
@@ -35,6 +35,10 @@ export default {
   methods: {
     addPlayer() {
       this.players.push({ name: '', account: false })
+    },
+    handlePlayerNameInput(name, index) {
+      this.players[index].name = name
+      this.$emit('input', this.players)
     },
   },
 }

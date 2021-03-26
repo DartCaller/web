@@ -3,7 +3,12 @@
     <h2>Settings</h2>
     <div class="row">
       <p>Game Mode</p>
-      <vs-select v-model="gameMode" color="#14A76C" class="select">
+      <vs-select
+        v-model="gameMode"
+        color="#14A76C"
+        class="select"
+        @input="onChangeHandler"
+      >
         <vs-option
           v-for="mode in gameModeOptions"
           :key="mode"
@@ -16,7 +21,11 @@
     </div>
     <div v-for="item in Object.keys(switches)" :key="item" class="row">
       <p>{{ item }}</p>
-      <vs-switch v-model="switches[item]" color="#14A76C">
+      <vs-switch
+        v-model="switches[item]"
+        color="#14A76C"
+        @change="onChangeHandler"
+      >
         <template #off> Off </template>
         <template #on> On </template>
       </vs-switch>
@@ -37,6 +46,20 @@ export default {
       'Checkout Recommendations': true,
     },
   }),
+  mounted() {
+    this.$emit('input', {
+      gameMode: this.gameMode,
+      switches: this.switches,
+    })
+  },
+  methods: {
+    onChangeHandler() {
+      this.$emit('input', {
+        gameMode: this.gameMode,
+        switches: this.switches,
+      })
+    },
+  },
 }
 </script>
 

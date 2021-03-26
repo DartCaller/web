@@ -3,13 +3,15 @@
     <h1>Create Game</h1>
     <div class="cards__container">
       <div class="player__card box_shadow">
-        <playerMenu />
+        <playerMenu @input="players = $event" />
       </div>
       <div class="settings__card box_shadow">
-        <settingsMenu />
+        <settingsMenu @input="settings = $event" />
       </div>
     </div>
-    <styled-button primary @click.native="startGame">Start Game</styled-button>
+    <styled-button primary :loading="loading" @click.native="startGame"
+      >Start Game</styled-button
+    >
   </div>
 </template>
 
@@ -21,10 +23,31 @@ import settingsMenu from '~/components/gameCreation/settingsMenu.vue'
 export default {
   name: 'CreateGame',
   components: { styledButton, playerMenu, settingsMenu },
+  data: () => ({
+    socket: null,
+    players: [],
+    settings: {},
+    loading: false,
+  }),
   methods: {
     startGame() {
-      this.$router.push({
-        path: '/123/play',
+      this.loading = true
+      this.$store.commit('game/SET_GAME_STATE', 'CREATE')
+      this.$io.socket.send(
+        JSON.stringify({
+          type: 'CreateGame',
+          players: this.players.map((e) => e.name),
+          gameMode: this.settings.gameMode,
+        })
+      )
+      this.$io.addEventListener((data) => {
+        if (this.$store.state.game.gameState === 'CREATE') {
+          this.$router.push({
+            path: '/123/play',
+          })
+          this.$store.commit('game/SET_GAME_STATE', 'PLAY')
+        }
+        this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
       })
     },
   },
