@@ -1,7 +1,7 @@
 <template>
   <div class="in_game__grid">
     <div class="score__card box_shadow">
-      <scoreTable :scores="scores" :players="players" />
+      <scoreTable :scores="absoluteScores" :players="players" />
     </div>
     <div class="action__card box_shadow">
       <styledButton icon="plus" small-text>New Game</styledButton>
@@ -10,7 +10,7 @@
     </div>
     <div class="current_player__card box_shadow">
       <currentPlayer
-        :scores-per-dart="scoresPerDart"
+        :scores-per-dart="lastThrows"
         :current-player="currentPlayer"
         :points-remaining="pointsRemainingForCurrentPlayer"
       />
@@ -29,31 +29,86 @@ import currentPlayer from '~/components/inGame/currentPlayer/currentPlayer'
 export default {
   name: 'InGame',
   components: { styledButton, scoreTable, currentPlayer },
-  data: () => ({
-    players: ['Lewe', 'Heiko', 'Timon'],
-    playerIndex: 1,
-    scoresPerDart: [60, 5],
-    scores: [
-      [501, 501, 501],
-      [455, 430, 480],
-      [423, 383, 435],
-      [374, 345, 386],
-      [351, 298, 335],
-      [302, 245, 299],
-      [275, 166, 245],
-      [221, 123, 212],
-      [140, 89, 183],
-      [40, 72, 100],
-      [0, 40, 40],
-      ['', 40, 0],
-    ],
-  }),
+  data: () => ({}),
   computed: {
+    game() {
+      return this.$store.state.game.serverState
+    },
+    players() {
+      return this.game.playerOrder.map(
+        (playerId) => this.game.playerNames[playerId]
+      )
+    },
     currentPlayer() {
-      return this.players[this.playerIndex]
+      return this.game.playerNames[this.game.currentPlayer]
+    },
+    scores() {
+      return this.game.scores
+    },
+    lastThrows() {
+      const lastRoundOfPlayer = this.scores[this.game.currentPlayer][
+        this.scores[this.game.currentPlayer].length - 1
+      ]
+      const lastRoundThrows = lastRoundOfPlayer.match(/([SDT]\d\d?)/g)
+      if (lastRoundThrows === null || lastRoundThrows.length === 3) {
+        return []
+      } else {
+        return lastRoundThrows.map(this.convertScoreFieldToScore)
+      }
+    },
+    absoluteScores() {
+      const absoluteScores = {}
+      for (const player in this.scores) {
+        if (!Object.prototype.hasOwnProperty.call(this.scores, player)) return
+        const playerScores = this.scores[player]
+        const absolutePlayerScores = (absoluteScores[player] = [])
+        for (
+          let gameRoundIndex = 0;
+          gameRoundIndex < playerScores.length;
+          gameRoundIndex++
+        ) {
+          const gameRound = playerScores[gameRoundIndex]
+          if (gameRoundIndex === 0) {
+            // That's our start number, no conversion needed
+            absolutePlayerScores.push(gameRound)
+          } else {
+            const previousRoundScore =
+              absolutePlayerScores[absolutePlayerScores.length - 1]
+            const roundThrows = gameRound.match(/([SDT]\d\d?)/g)
+            const roundScore = roundThrows.reduce(
+              (currentScore, scoredField) => {
+                const number = this.convertScoreFieldToScore(scoredField)
+                return currentScore - number
+              },
+              previousRoundScore
+            )
+            absolutePlayerScores.push(roundScore)
+          }
+        }
+      }
+      return this.game.playerOrder.map((playerId) => absoluteScores[playerId])
     },
     pointsRemainingForCurrentPlayer() {
-      return this.scores[this.scores.length - 1][this.playerIndex]
+      const currentPlayerIndex = this.game.playerOrder.indexOf(
+        this.game.currentPlayer
+      )
+      return +this.absoluteScores[currentPlayerIndex][
+        this.absoluteScores[currentPlayerIndex].length - 1
+      ]
+    },
+  },
+  methods: {
+    convertScoreFieldToScore(scoreField) {
+      // e.g T20 (means Triple 20) -> 60
+      const num = scoreField.match(/\d+/).map(Number)[0]
+      switch (scoreField[0]) {
+        case 'S':
+          return num
+        case 'D':
+          return 2 * num
+        case 'T':
+          return 3 * num
+      }
     },
   },
 }

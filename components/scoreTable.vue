@@ -8,9 +8,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, i) in scores" :key="i">
-        <td v-for="(score, j) in row" :key="j">
-          {{ score }}
+      <tr v-for="roundIndex in scores[0].length" :key="roundIndex">
+        <td v-for="(playerScore, j) in scores" :key="j">
+          {{ playerScore[roundIndex - 1] }}
         </td>
       </tr>
     </tbody>
