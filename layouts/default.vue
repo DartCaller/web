@@ -5,7 +5,9 @@
         <h2>DartCaller</h2>
       </template>
       <template #right>
-        <styledButton>Game</styledButton>
+        <NuxtLink to="/create-game">
+          <styledButton>Game</styledButton>
+        </NuxtLink>
         <styledButton>Profile</styledButton>
         <styledButton>Settings</styledButton>
         <styledButton>Logout</styledButton>
@@ -55,6 +57,10 @@ body,
   box-sizing: border-box;
   margin: 0;
   color: white;
+}
+
+a {
+  text-decoration: none;
 }
 
 .box_shadow {

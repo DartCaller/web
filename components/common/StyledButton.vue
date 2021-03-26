@@ -1,5 +1,5 @@
 <template>
-  <vs-button :color="buttonColor">
+  <vs-button :color="buttonColor" :loading="loading">
     <component
       :is="activeIcon"
       v-if="activeIcon"
@@ -26,6 +26,7 @@ export default {
     plus,
   },
   props: {
+    loading: Boolean,
     primary: Boolean,
     smallText: Boolean,
     icon: {
