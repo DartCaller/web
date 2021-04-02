@@ -83,11 +83,16 @@ a {
   flex-grow: 1;
 }
 
-.vs-input {
+.vs-input,
+.vs-input::placeholder {
   font-family: 'Tahoma', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   font-size: 18px;
   font-weight: normal;
+}
+
+.vs-input {
+  padding: 5px 13px;
 
   &:focus {
     padding-left: 10px;

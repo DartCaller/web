@@ -54,8 +54,8 @@ export default {
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   padding-right: 5px;
 
   &.small {

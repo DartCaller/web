@@ -8,6 +8,7 @@
         <vs-input
           v-if="editMode || nameIsEmpty"
           border
+          success
           class="input"
           :value="player.name"
           placeholder="Name"
@@ -61,6 +62,8 @@ export default {
 
   .delete_button {
     cursor: pointer;
+    height: 24px;
+    width: auto;
   }
 
   .name .input {
@@ -70,7 +73,7 @@ export default {
   .name .label {
     border: 2px solid transparent;
     margin-left: 5px;
-    padding: 7px 0;
+    padding: 5px 0;
   }
 
   > * {
