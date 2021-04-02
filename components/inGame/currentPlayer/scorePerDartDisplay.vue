@@ -1,8 +1,13 @@
 <template>
   <div class="container">
-    <div v-for="i in 3" :key="i" class="dart">
-      <dart-svg class="dartSvg" :class="{ active: scoresPerDart[i - 1] }" />
-      <p class="score">{{ scoresPerDart[i - 1] || '' }}</p>
+    <div
+      v-for="i in 3"
+      :key="i"
+      class="dart"
+      :class="{ active: scoresPerDart[i - 1] }"
+    >
+      <dart-svg class="dartSvg" />
+      <p class="score">{{ scoresPerDart[i - 1] || '_' }}</p>
     </div>
   </div>
 </template>
@@ -32,6 +37,10 @@ export default {
   display: flex;
   flex-direction: column;
 
+  .score {
+    color: $lightgrey;
+  }
+
   .dartSvg {
     height: 60px;
     width: 60px;
@@ -40,9 +49,15 @@ export default {
     g {
       fill: $lightgrey;
     }
+  }
 
-    &.active g {
+  &.active {
+    .dartSvg g {
       fill: $white;
+    }
+
+    .score {
+      color: $white;
     }
   }
 
