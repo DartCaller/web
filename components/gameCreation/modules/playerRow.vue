@@ -7,13 +7,16 @@
       <div class="name">
         <vs-input
           v-if="editMode || nameIsEmpty"
+          border
+          success
+          class="input"
           :value="player.name"
           placeholder="Name"
           @input="newName = $event"
           @blur="$emit('input', newName)"
           @keyup.enter="$emit('input', newName)"
         />
-        <p v-else @click="editMode = true">
+        <p v-else class="label" @click="editMode = true">
           {{ player.name }}
         </p>
       </div>
@@ -59,6 +62,18 @@ export default {
 
   .delete_button {
     cursor: pointer;
+    height: 24px;
+    width: auto;
+  }
+
+  .name .input {
+    margin-left: -5px;
+  }
+
+  .name .label {
+    border: 2px solid transparent;
+    margin-left: 5px;
+    padding: 5px 0;
   }
 
   > * {

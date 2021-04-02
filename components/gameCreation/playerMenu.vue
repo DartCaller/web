@@ -58,8 +58,8 @@ h2 {
   text-align: left;
 
   /deep/ .vs-button__content svg {
-    margin-right: 20px;
-    margin-left: -1px;
+    margin-right: 23px;
+    margin-left: -4px;
   }
 }
 </style>
