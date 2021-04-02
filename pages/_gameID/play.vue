@@ -161,4 +161,11 @@ export default {
     justify-content: space-around;
   }
 }
+
+@media (max-width: 1200px) {
+  .in_game__grid {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
 </style>
