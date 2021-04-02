@@ -4,7 +4,7 @@
     <div class="player_list">
       <playerRow
         v-for="(player, index) in players"
-        :key="player.name + player.account"
+        :key="player.name"
         :player="player"
         class="player_row"
         @input="(name) => handlePlayerNameInput(name, index)"
