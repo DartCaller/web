@@ -4,7 +4,12 @@
       <scoreTable :scores="absoluteScores" :players="players" />
     </div>
     <div class="action__card box_shadow">
-      <styledButton icon="plus" small-text>New Game</styledButton>
+      <styledButton v-if="gameState === 'PLAY'" icon="check" small-text
+        >Finish Current Turn</styledButton
+      >
+      <styledButton v-else-if="gameState === 'DONE'" icon="plus" small-text
+        >New Game</styledButton
+      >
       <styledButton icon="pencil" small-text>Correct Score</styledButton>
       <styledButton icon="history" small-text>Revert last Dart</styledButton>
     </div>
@@ -31,6 +36,9 @@ export default {
   components: { styledButton, scoreTable, currentPlayer },
   data: () => ({}),
   computed: {
+    gameState() {
+      return this.$store.state.game.gameState
+    },
     game() {
       return this.$store.state.game.serverState
     },
