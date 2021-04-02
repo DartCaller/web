@@ -42,12 +42,15 @@ export default {
       )
       this.$io.addEventListener((data) => {
         if (this.$store.state.game.gameState === 'CREATE') {
+          const initialGameState = JSON.parse(data.data)
           this.$router.push({
-            path: '/123/play',
+            path: `/${initialGameState.gameID}/play`,
           })
           this.$store.commit('game/SET_GAME_STATE', 'PLAY')
+          this.$store.commit('game/SET_SERVER_STATE', initialGameState)
+        } else {
+          this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
         }
-        this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
       })
     },
   },
