@@ -44,7 +44,7 @@ export default {
         if (this.$store.state.game.gameState === 'CREATE') {
           const initialGameState = JSON.parse(data.data)
           this.$router.push({
-            path: `/${initialGameState.gameID}/play`,
+            path: `/${initialGameState.legID}/play`,
           })
           this.$store.commit('game/SET_GAME_STATE', 'PLAY')
           this.$store.commit('game/SET_SERVER_STATE', initialGameState)
