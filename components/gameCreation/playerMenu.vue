@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Players</h2>
+    <h2 class="mb">Players</h2>
     <div class="player_list">
       <playerRow
         v-for="(player, index) in players"
@@ -45,10 +45,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-h2 {
-  margin-bottom: 15px;
-}
-
 .player_row {
   margin: 10px 0;
 }

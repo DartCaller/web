@@ -14,16 +14,19 @@
       </template>
     </vs-navbar>
     <Nuxt class="flex_grow" />
+    <ModalSlot class="global_modal" />
   </div>
 </template>
 
 <script>
 import styledButton from '~/components/common/StyledButton'
+import ModalSlot from '~/components/common/modal/ModalSlot'
 
 export default {
   name: 'DefaultLayout',
   components: {
     styledButton,
+    ModalSlot,
   },
 }
 </script>
@@ -81,6 +84,12 @@ a {
 
 .flex_grow {
   flex-grow: 1;
+}
+
+.global_modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .vs-input,

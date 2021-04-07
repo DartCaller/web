@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Settings</h2>
+    <h2 class="mb">Settings</h2>
     <div class="row">
       <p>Game Mode</p>
       <vs-select
@@ -64,9 +64,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-h2 {
-  margin-bottom: 15px;
-}
 .row {
   display: flex;
   align-items: center;
