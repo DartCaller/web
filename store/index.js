@@ -1,5 +1,5 @@
 export const state = () => ({
-  modal: 'CorrectScore',
+  modal: null,
 })
 
 export const mutations = {

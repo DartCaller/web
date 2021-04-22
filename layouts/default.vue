@@ -100,6 +100,16 @@ a {
   font-weight: normal;
 }
 
+.vs-select__message {
+  position: absolute;
+  padding-top: 3px;
+}
+
+.vs-input__message {
+  position: absolute;
+  bottom: -15px;
+}
+
 .vs-input {
   padding: 5px 13px;
 

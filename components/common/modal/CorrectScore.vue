@@ -8,8 +8,11 @@
           v-model="chosenPlayerID"
           color="#14A76C"
           class="select"
-          @input="resetLastScore"
+          @input="handleChosenPlayerInput"
         >
+          <template v-if="invalidChosenPlayer" #message-danger>
+            Invalid
+          </template>
           <vs-option
             v-for="player in allPlayers"
             :key="player.id"
@@ -22,7 +25,9 @@
       </div>
       <div>
         <p>Last Score:</p>
-        <vs-input v-model="newScoreValue" class="input" border success />
+        <vs-input v-model="newScoreValue" class="input" border success>
+          <template v-if="!newScoreIsValid" #message-danger> Invalid </template>
+        </vs-input>
       </div>
     </div>
     <div class="hr" />
@@ -33,8 +38,13 @@
       :show-only="showOnlyScoreRows"
     />
     <div class="action_button">
-      <styled-button secondary> Cancel </styled-button>
-      <styled-button primary> Apply </styled-button>
+      <styled-button
+        secondary
+        @click.native="() => $store.commit('CLOSE_MODAL')"
+      >
+        Cancel
+      </styled-button>
+      <styled-button primary @click.native="onSubmit"> Apply </styled-button>
     </div>
   </div>
 </template>
@@ -52,13 +62,27 @@ export default {
     newScoreValue: null,
   }),
   computed: {
+    invalidChosenPlayer() {
+      return this.chosenPlayerID === this.game.currentPlayer
+    },
+    lastRoundForCurrentPlayer() {
+      if (this.chosenPlayerID) {
+        return this.scores[this.chosenPlayerID].length - 1
+      } else return 0
+    },
     lastPlayerScore() {
       if (this.chosenPlayerID) {
-        const playerScore = this.$store.state.game.serverState.scores[
-          this.chosenPlayerID
-        ]
-        return playerScore[playerScore.length - 1]
-      } else return ''
+        return this.scores[this.chosenPlayerID][this.lastRoundForCurrentPlayer]
+      } else return 0
+    },
+    newScoreIsValid() {
+      return (
+        this.calculateAbsolutePlayerScore(
+          this.updatedScores[this.chosenPlayerID]
+        )[this.lastRoundForCurrentPlayer] >= 0 &&
+        Number(this.newScoreValue) <= 180 &&
+        Number(this.newScoreValue) >= 0
+      )
     },
     game() {
       return this.$store.state.game.serverState
@@ -74,6 +98,15 @@ export default {
     scores() {
       return this.game.scores
     },
+    updatedScores() {
+      const scoresToBeUpdated = JSON.parse(JSON.stringify(this.scores))
+      scoresToBeUpdated[this.chosenPlayerID].splice(
+        this.lastRoundForCurrentPlayer,
+        1,
+        `S${this.newScoreValue}`
+      )
+      return scoresToBeUpdated
+    },
     showOnlyScoreRows() {
       const currentRound =
         Math.max(
@@ -83,33 +116,11 @@ export default {
     },
     absoluteScores() {
       const absoluteScores = {}
-      for (const player in this.scores) {
-        if (!Object.prototype.hasOwnProperty.call(this.scores, player)) return
-        const playerScores = this.scores[player]
-        const absolutePlayerScores = (absoluteScores[player] = [])
-        for (
-          let gameRoundIndex = 0;
-          gameRoundIndex < playerScores.length;
-          gameRoundIndex++
-        ) {
-          const gameRound = playerScores[gameRoundIndex]
-          if (gameRoundIndex === 0) {
-            // That's our start number, no conversion needed
-            absolutePlayerScores.push(gameRound)
-          } else {
-            const previousRoundScore =
-              absolutePlayerScores[absolutePlayerScores.length - 1]
-            const roundThrows = gameRound.match(/([SDT-]\d\d?)/g)
-            const roundScore = roundThrows.reduce(
-              (currentScore, scoredField) => {
-                const number = this.convertScoreFieldToScore(scoredField)
-                return currentScore - number
-              },
-              previousRoundScore
-            )
-            absolutePlayerScores.push(roundScore)
-          }
-        }
+      for (const player in this.updatedScores) {
+        if (!Object.prototype.hasOwnProperty.call(this.updatedScores, player))
+          return
+        const playerScores = this.updatedScores[player]
+        absoluteScores[player] = this.calculateAbsolutePlayerScore(playerScores)
       }
       const result = this.game.playerOrder.map(
         (playerId) => absoluteScores[playerId]
@@ -130,6 +141,70 @@ export default {
     this.resetLastScore()
   },
   methods: {
+    onSubmit() {
+      if (!this.newScoreIsValid) return
+      this.$axios
+        .post(
+          `http://localhost:8080/game/${this.game.gameID}/correctScore`,
+          JSON.stringify({
+            playerId: this.chosenPlayerID,
+            scoreString: `S${this.newScoreValue}S0S0`,
+          }),
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+        .then((response) => {
+          this.$store.commit('CLOSE_MODAL')
+        })
+        .catch(console.error)
+    },
+    handleChosenPlayerInput() {
+      if (this.invalidChosenPlayer === true) {
+        this.$vs.notification({
+          progress: 'auto',
+          position: 'top-center',
+          duration: 5000,
+          title: 'Invalid Player',
+          text:
+            "You can't change a players' score when it's currently his turn. Finish the turn first and then you can change it.",
+        })
+      }
+      this.resetLastScore()
+    },
+    calculateAbsolutePlayerScore(playerScores) {
+      const absolutePlayerScores = []
+      for (
+        let gameRoundIndex = 0;
+        gameRoundIndex < playerScores.length;
+        gameRoundIndex++
+      ) {
+        const gameRound = playerScores[gameRoundIndex]
+        if (gameRoundIndex === 0) {
+          // That's our start number, no conversion needed
+          absolutePlayerScores.push(gameRound)
+        } else {
+          const previousRoundScore =
+            absolutePlayerScores[absolutePlayerScores.length - 1]
+          const roundThrows = gameRound.match(/([SDT-]\d{1,3})/g)
+          if (roundThrows) {
+            const roundScore = roundThrows.reduce(
+              (currentScore, scoredField) => {
+                const number = this.convertScoreFieldToScore(scoredField)
+                return currentScore - number
+              },
+              previousRoundScore
+            )
+            absolutePlayerScores.push(roundScore)
+          } else {
+            absolutePlayerScores.push(previousRoundScore)
+          }
+        }
+      }
+      return absolutePlayerScores
+    },
     setDefaultSelectedPlayer() {
       const { playerOrder, currentPlayer } = this.$store.state.game.serverState
       const currentPlayerIndex = playerOrder.indexOf(currentPlayer)
@@ -144,7 +219,7 @@ export default {
       this.newScoreValue = this.convertScoreStringToScore(this.lastPlayerScore)
     },
     convertScoreStringToScore(scoreString) {
-      const roundThrows = scoreString.match(/([SDT-]\d\d?)/g)
+      const roundThrows = scoreString.match(/([SDT-]\d{1,3})/g)
       return roundThrows.reduce(
         (currentScore, scoredField) =>
           currentScore + this.convertScoreFieldToScore(scoredField),
@@ -153,7 +228,7 @@ export default {
     },
     convertScoreFieldToScore(scoreField) {
       // e.g T20 (means Triple 20) -> 60
-      const num = scoreField.match(/\d+/).map(Number)[0]
+      const num = scoreField.match(/\d{1,3}/).map(Number)[0]
       switch (scoreField[0]) {
         case 'S':
           return num
@@ -185,7 +260,7 @@ export default {
   .row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 
     > * {
