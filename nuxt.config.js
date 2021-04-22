@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'dart-web',
+    title: 'Dart Caller',
     htmlAttrs: {
       lang: 'en',
     },
@@ -14,10 +14,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['vuesax/dist/vuesax.css'],
+  css: [
+    'vuesax/dist/vuesax.css',
+    '../assets/scss/colors.scss',
+    '../assets/scss/fonts.scss',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/vuesax'],
+  plugins: ['@/plugins/vuesax', { src: '~/plugins/socket', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -34,7 +38,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/svg',
   ],
+
+  styleResources: {
+    scss: ['@/assets/scss/*.scss'],
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
