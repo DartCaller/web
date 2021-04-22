@@ -49,7 +49,7 @@ export default {
       const lastRoundOfPlayer = this.scores[this.game.currentPlayer][
         this.scores[this.game.currentPlayer].length - 1
       ]
-      const lastRoundThrows = lastRoundOfPlayer.match(/([SDT-]\d\d?)/g)
+      const lastRoundThrows = lastRoundOfPlayer.match(/([SDT-]\d\d?\d?)/g)
       if (lastRoundThrows === null || lastRoundThrows.length === 3) {
         return []
       } else {
@@ -74,7 +74,7 @@ export default {
           } else {
             const previousRoundScore =
               absolutePlayerScores[absolutePlayerScores.length - 1]
-            const roundThrows = gameRound.match(/([SDT-]\d\d?)/g)
+            const roundThrows = gameRound.match(/([SDT-]\d\d?\d?)/g)
             const roundScore = roundThrows.reduce(
               (currentScore, scoredField) => {
                 const number = this.convertScoreFieldToScore(scoredField)
