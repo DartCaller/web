@@ -1,7 +1,11 @@
 <template>
   <div class="in_game__grid">
     <div class="score__card box_shadow">
-      <scoreTable :scores="absoluteScores" :players="players" />
+      <scoreTable
+        :scores="absoluteScores"
+        :players="players"
+        :show-extra-bg-rows="2"
+      />
     </div>
     <actions class="action__card box_shadow" />
     <div class="current_player__card box_shadow">

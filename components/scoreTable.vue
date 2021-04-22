@@ -8,10 +8,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="roundIndex in tableRowsToRender" :key="roundIndex">
+      <tr
+        v-for="roundIndex in tableRowsToRender + showExtraBgRows"
+        :key="roundIndex"
+      >
         <td v-for="(playerScore, j) in filteredRows" :key="j">
           <three-dots v-if="playerScore[roundIndex - 1] === null" />
-          <template v-else>
+          <template v-else-if="playerScore[roundIndex - 1] !== undefined">
             {{ playerScore[roundIndex - 1] }}
           </template>
         </td>
@@ -34,6 +37,10 @@ export default {
     scores: {
       required: true,
       type: Array,
+    },
+    showExtraBgRows: {
+      type: Number,
+      default: 0,
     },
     showOnly: {
       type: Array,
