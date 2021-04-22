@@ -8,9 +8,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="roundIndex in scores[0].length" :key="roundIndex">
-        <td v-for="(playerScore, j) in scores" :key="j">
-          {{ playerScore[roundIndex - 1] }}
+      <tr
+        v-for="roundIndex in tableRowsToRender + showExtraBgRows"
+        :key="roundIndex"
+      >
+        <td v-for="(playerScore, j) in filteredRows" :key="j">
+          <three-dots v-if="playerScore[roundIndex - 1] === null" />
+          <template v-else-if="playerScore[roundIndex - 1] !== undefined">
+            {{ playerScore[roundIndex - 1] }}
+          </template>
         </td>
       </tr>
     </tbody>
@@ -18,8 +24,11 @@
 </template>
 
 <script>
+import threeDots from '~/assets/images/threeDots.svg?inline'
+
 export default {
   name: 'ScoreTable',
+  components: { threeDots },
   props: {
     players: {
       required: true,
@@ -28,6 +37,37 @@ export default {
     scores: {
       required: true,
       type: Array,
+    },
+    showExtraBgRows: {
+      type: Number,
+      default: 0,
+    },
+    showOnly: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    filteredRows() {
+      if (!this.showOnly || this.showOnly.length === 0) return this.scores
+      else
+        return this.scores.map((playerScores) => {
+          return playerScores.reduce((filteredPlayerScore, currentScore, i) => {
+            if (this.showOnly.includes(i)) {
+              filteredPlayerScore.push(currentScore)
+            } else if (
+              filteredPlayerScore[filteredPlayerScore.length - 1] !== null
+            ) {
+              filteredPlayerScore.push(null)
+            }
+            return filteredPlayerScore
+          }, [])
+        })
+    },
+    tableRowsToRender() {
+      return Math.max(
+        ...Object.values(this.filteredRows).map((scores) => scores.length)
+      )
     },
   },
 }

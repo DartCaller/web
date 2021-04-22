@@ -28,6 +28,7 @@ export default {
   props: {
     loading: Boolean,
     primary: Boolean,
+    secondary: Boolean,
     smallText: Boolean,
     icon: {
       default: null,
@@ -39,7 +40,11 @@ export default {
   }),
   computed: {
     buttonColor() {
-      return this.primary ? '#14A76C' : '#303030'
+      if (this.primary) {
+        return '#14A76C'
+      } else if (this.secondary) {
+        return '#B04521'
+      } else return '#303030'
     },
     activeIcon() {
       return this.icon && this.icons.includes(this.icon) ? this.icon : null

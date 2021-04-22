@@ -14,16 +14,19 @@
       </template>
     </vs-navbar>
     <Nuxt class="flex_grow" />
+    <ModalSlot class="global_modal" />
   </div>
 </template>
 
 <script>
 import styledButton from '~/components/common/StyledButton'
+import ModalSlot from '~/components/common/modal/ModalSlot'
 
 export default {
   name: 'DefaultLayout',
   components: {
     styledButton,
+    ModalSlot,
   },
 }
 </script>
@@ -83,12 +86,28 @@ a {
   flex-grow: 1;
 }
 
+.global_modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .vs-input,
 .vs-input::placeholder {
   font-family: 'Tahoma', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   font-size: 18px;
   font-weight: normal;
+}
+
+.vs-select__message {
+  position: absolute;
+  padding-top: 3px;
+}
+
+.vs-input__message {
+  position: absolute;
+  bottom: -15px;
 }
 
 .vs-input {

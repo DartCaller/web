@@ -1,13 +1,14 @@
 <template>
   <div>
-    <h2>Players</h2>
+    <h2 class="mb">Players</h2>
     <div class="player_list">
       <playerRow
         v-for="(player, index) in players"
-        :key="player.name + player.account"
+        :key="player.name"
         :player="player"
         class="player_row"
         @input="(name) => handlePlayerNameInput(name, index)"
+        @keydown.tab.native="addPlayer"
         @delete="players.splice(index, 1)"
       />
     </div>
@@ -45,10 +46,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-h2 {
-  margin-bottom: 15px;
-}
-
 .player_row {
   margin: 10px 0;
 }

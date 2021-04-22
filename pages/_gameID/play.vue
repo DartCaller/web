@@ -1,13 +1,13 @@
 <template>
   <div class="in_game__grid">
     <div class="score__card box_shadow">
-      <scoreTable :scores="absoluteScores" :players="players" />
+      <scoreTable
+        :scores="absoluteScores"
+        :players="players"
+        :show-extra-bg-rows="2"
+      />
     </div>
-    <div class="action__card box_shadow">
-      <styledButton icon="plus" small-text>New Game</styledButton>
-      <styledButton icon="pencil" small-text>Correct Score</styledButton>
-      <styledButton icon="history" small-text>Revert last Dart</styledButton>
-    </div>
+    <actions class="action__card box_shadow" />
     <div class="current_player__card box_shadow">
       <currentPlayer
         :scores-per-dart="lastThrows"
@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import styledButton from '~/components/common/StyledButton'
 import scoreTable from '~/components/scoreTable'
 import currentPlayer from '~/components/inGame/currentPlayer/currentPlayer'
+import actions from '~/components/inGame/actions'
 
 export default {
   name: 'InGame',
-  components: { styledButton, scoreTable, currentPlayer },
+  components: { scoreTable, currentPlayer, actions },
   data: () => ({}),
   computed: {
     game() {
@@ -49,7 +49,7 @@ export default {
       const lastRoundOfPlayer = this.scores[this.game.currentPlayer][
         this.scores[this.game.currentPlayer].length - 1
       ]
-      const lastRoundThrows = lastRoundOfPlayer.match(/([SDT]\d\d?)/g)
+      const lastRoundThrows = lastRoundOfPlayer.match(/([SDT-]\d\d?\d?)/g)
       if (lastRoundThrows === null || lastRoundThrows.length === 3) {
         return []
       } else {
@@ -74,7 +74,7 @@ export default {
           } else {
             const previousRoundScore =
               absolutePlayerScores[absolutePlayerScores.length - 1]
-            const roundThrows = gameRound.match(/([SDT]\d\d?)/g)
+            const roundThrows = gameRound.match(/([SDT-]\d\d?\d?)/g)
             const roundScore = roundThrows.reduce(
               (currentScore, scoredField) => {
                 const number = this.convertScoreFieldToScore(scoredField)
@@ -97,6 +97,11 @@ export default {
       ]
     },
   },
+  mounted() {
+    if (!this.$store.state.game.subscribed) {
+      this.connectToGame(this.$route.params.gameID)
+    }
+  },
   methods: {
     convertScoreFieldToScore(scoreField) {
       // e.g T20 (means Triple 20) -> 60
@@ -108,6 +113,26 @@ export default {
           return 2 * num
         case 'T':
           return 3 * num
+        default:
+          return 0
+      }
+    },
+    connectToGame(gameID) {
+      this.$io.socket.onopen = () => {
+        this.$io.socket.send(
+          JSON.stringify({
+            type: 'JoinGame',
+            gameID,
+          })
+        )
+        this.$store.commit('game/SET_GAME_STATE', 'JOIN')
+        this.$io.addEventListener((data) => {
+          if (this.$store.state.game.gameState === 'JOIN') {
+            this.$store.commit('game/SET_SUBSCRIBED', true)
+            this.$store.commit('game/SET_GAME_STATE', 'PLAY')
+          }
+          this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
+        })
       }
     },
   },
@@ -157,6 +182,13 @@ export default {
     grid-area: action__card;
     display: flex;
     justify-content: space-around;
+  }
+}
+
+@media (max-width: 1200px) {
+  .in_game__grid {
+    padding-right: 100px;
+    padding-left: 100px;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 export const state = () => ({
   gameState: null,
+  subscribed: false,
   serverState: {},
 })
 
@@ -9,5 +10,8 @@ export const mutations = {
   },
   SET_SERVER_STATE(state, serverState) {
     state.serverState = serverState
+  },
+  SET_SUBSCRIBED(state, subscribed) {
+    state.subscribed = subscribed
   },
 }
