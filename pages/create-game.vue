@@ -45,7 +45,7 @@ export default {
           this.$store.commit('game/SET_SUBSCRIBED', true)
           const initialGameState = JSON.parse(data.data)
           this.$router.push({
-            path: `/${initialGameState.legID}/play`,
+            path: `/${initialGameState.gameID}/play`,
           })
           this.$store.commit('game/SET_GAME_STATE', 'PLAY')
           this.$store.commit('game/SET_SERVER_STATE', initialGameState)
