@@ -42,6 +42,7 @@ export default {
       )
       this.$io.addEventListener((data) => {
         if (this.$store.state.game.gameState === 'CREATE') {
+          this.$store.commit('game/SET_SUBSCRIBED', true)
           const initialGameState = JSON.parse(data.data)
           this.$router.push({
             path: `/${initialGameState.legID}/play`,

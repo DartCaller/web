@@ -93,6 +93,11 @@ export default {
       ]
     },
   },
+  mounted() {
+    if (!this.$store.state.game.subscribed) {
+      this.connectToGame(this.$route.params.gameID)
+    }
+  },
   methods: {
     convertScoreFieldToScore(scoreField) {
       // e.g T20 (means Triple 20) -> 60
@@ -106,6 +111,24 @@ export default {
           return 3 * num
         default:
           return 0
+      }
+    },
+    connectToGame(gameID) {
+      this.$io.socket.onopen = () => {
+        this.$io.socket.send(
+          JSON.stringify({
+            type: 'JoinGame',
+            gameID,
+          })
+        )
+        this.$store.commit('game/SET_GAME_STATE', 'JOIN')
+        this.$io.addEventListener((data) => {
+          if (this.$store.state.game.gameState === 'JOIN') {
+            this.$store.commit('game/SET_SUBSCRIBED', true)
+            this.$store.commit('game/SET_GAME_STATE', 'PLAY')
+          }
+          this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
+        })
       }
     },
   },
