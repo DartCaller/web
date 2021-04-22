@@ -3,16 +3,7 @@
     <div class="score__card box_shadow">
       <scoreTable :scores="absoluteScores" :players="players" />
     </div>
-    <div class="action__card box_shadow">
-      <styledButton v-if="game.legFinished" icon="plus" small-text
-        >New Game</styledButton
-      >
-      <styledButton v-else icon="check" small-text
-        >Finish Current Turn</styledButton
-      >
-      <styledButton icon="pencil" small-text>Correct Score</styledButton>
-      <styledButton icon="history" small-text>Revert last Dart</styledButton>
-    </div>
+    <actions class="action__card box_shadow" />
     <div class="current_player__card box_shadow">
       <currentPlayer
         :scores-per-dart="lastThrows"
@@ -27,13 +18,13 @@
 </template>
 
 <script>
-import styledButton from '~/components/common/StyledButton'
 import scoreTable from '~/components/scoreTable'
 import currentPlayer from '~/components/inGame/currentPlayer/currentPlayer'
+import actions from '~/components/inGame/actions'
 
 export default {
   name: 'InGame',
-  components: { styledButton, scoreTable, currentPlayer },
+  components: { scoreTable, currentPlayer, actions },
   data: () => ({}),
   computed: {
     game() {
