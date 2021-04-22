@@ -8,6 +8,7 @@
         :player="player"
         class="player_row"
         @input="(name) => handlePlayerNameInput(name, index)"
+        @keydown.tab.native="addPlayer"
         @delete="players.splice(index, 1)"
       />
     </div>
