@@ -2,7 +2,7 @@ const path = require('path');
 const pathToInlineSvg = path.resolve(__dirname, '../assets/images');
 
 module.exports = {
-  "stories": ['../components/**/*.stories.js'],
+  "stories": ['../!(node_modules)/**/*.stories.@(js)'],
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials"
