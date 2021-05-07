@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots StyledButton Default 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+      Submit
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots StyledButton Icon 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <svg
+      class="icon small"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.998 2.5A9.503 9.503 0 003.378 8H5.75a.75.75 0 010 1.5H2a1 1 0 01-1-1V4.75a.75.75 0 011.5 0v1.697A10.997 10.997 0 0111.998 1C18.074 1 23 5.925 23 12s-4.926 11-11.002 11C6.014 23 1.146 18.223 1 12.275a.75.75 0 011.5-.037 9.5 9.5 0 009.498 9.262c5.248 0 9.502-4.253 9.502-9.5s-4.254-9.5-9.502-9.5z"
+        fill="white"
+      />
+      <path
+        d="M12.5 7.25a.75.75 0 00-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 00.744-1.302L12.5 12.315V7.25z"
+      />
+    </svg>
+     
+    <p
+      class="small"
+    >
+      Submit
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots StyledButton Loading 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--loading vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+      Submit
+    </p>
+  </div>
+  <div
+    class="vs-button__loading"
+  />
+</button>
+`;
+
+exports[`Storyshots StyledButton Primary 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+      Submit
+    </p>
+  </div>
+</button>
+`;
