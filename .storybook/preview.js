@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!sass-loader!../assets/scss/colors.scss';
+import '!style-loader!css-loader!sass-loader!../assets/scss/main.scss';
 
 import Vue from 'vue'
 import Vuesax from 'vuesax'
