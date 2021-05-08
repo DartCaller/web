@@ -7,6 +7,8 @@ module.exports = {
   },
   moduleNameMapper: {
     '^.+/(.*\\.svg)\\?inline$': '<rootDir>/assets/images/$1',
+    '^@/(.*)$': '<rootDir>/$1',
+    '^~/(.*)$': '<rootDir>/$1',
   },
   transformIgnorePatterns: [
     '/node_modules/(?!(@storybook/.*\\.vue$)|vuesax|@storybook/vue)',
