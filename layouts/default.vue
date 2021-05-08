@@ -49,6 +49,9 @@ body,
 #__nuxt,
 #__layout {
   height: 100%;
+}
+
+body:not(.sb-show-main) {
   background-color: $grey;
   background-image: url('~assets/images/DartboardBackground.svg');
   background-position: center;

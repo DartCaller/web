@@ -1,5 +1,5 @@
 <template>
-  <vs-button :color="buttonColor" :loading="loading">
+  <vs-button :color="buttonColor" :loading="loading" @click="$emit('click')">
     <component
       :is="activeIcon"
       v-if="activeIcon"

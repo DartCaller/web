@@ -51,4 +51,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  storybook: {
+    // options
+    addons: [],
+    parameters: {
+      backgrounds: {
+        default: 'white',
+        values: [
+          { name: 'white', value: '#ffffff' },
+          { name: 'gray', value: '#303030' },
+        ],
+      },
+    },
+  },
 }
