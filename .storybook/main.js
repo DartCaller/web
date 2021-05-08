@@ -2,7 +2,7 @@ const path = require('path');
 const pathToInlineSvg = path.resolve(__dirname, '../assets/images');
 
 module.exports = {
-  "stories": ['../!(node_modules)/**/*.stories.@(js)'],
+  "stories": ['../components/**/*.stories.@(js)'],
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials"
@@ -13,10 +13,21 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '~': path.resolve(__dirname, '../'),
+      'assets/images': path.resolve(__dirname, '../assets/images'),
     };
 
     const fileLoaderRule = config.module.rules.find(rule => rule.test.test('.svg'));
     fileLoaderRule.exclude = pathToInlineSvg;
+
+    config.module.rules.push({
+      test: /\.png$/,
+      include: path.resolve(__dirname, '../assets/images'),
+      use: [{
+        loader: 'file-loader',
+        options: { esModule: false, name: 'static/media/[path][name].[ext]' },
+      }],
+    });
+
     config.module.rules.push({
       test: /\.svg$/,
       include: pathToInlineSvg,
