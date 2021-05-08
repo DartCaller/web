@@ -38,7 +38,7 @@ export default {
   flex-direction: column;
 
   .score {
-    color: $lightgrey;
+    color: rgba(var(--lightgrey), 1);
   }
 
   .dartSvg {
@@ -47,17 +47,17 @@ export default {
     margin: 0 10px;
 
     g {
-      fill: $lightgrey;
+      fill: rgba(var(--lightgrey), 1);
     }
   }
 
   &.active {
     .dartSvg g {
-      fill: $white;
+      fill: #fff;
     }
 
     .score {
-      color: $white;
+      color: #fff;
     }
   }
 
