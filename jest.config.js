@@ -7,6 +7,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^.+/(.*\\.svg)\\?inline$': '<rootDir>/assets/images/$1',
+    '^!style-loader!css-loader!sass-loader!(.*\\.scss)$': '$1',
   },
   transformIgnorePatterns: ['/node_modules/(?!(@storybook/.*\\.vue$)|vuesax)'],
   moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
