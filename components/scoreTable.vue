@@ -90,7 +90,7 @@ table {
   }
 
   tr:nth-child(even) {
-    background-color: $lightgrey;
+    background-color: var(--lightgrey);
 
     td:first-child {
       border-radius: 5px 0 0 5px;
