@@ -13,8 +13,8 @@
           :value="player.name"
           placeholder="Name"
           @input="newName = $event"
-          @blur="$emit('input', newName)"
-          @keyup.enter="$emit('input', newName)"
+          @blur="onSubmit"
+          @keyup.enter="onSubmit"
         />
         <p v-else class="label" @click="editMode = true">
           {{ player.name }}
@@ -49,6 +49,13 @@ export default {
   computed: {
     nameIsEmpty() {
       return this.player.name === ''
+    },
+  },
+  methods: {
+    onSubmit() {
+      this.editMode = false
+      this.newName = ''
+      this.$emit('input', this.newName)
     },
   },
 }
