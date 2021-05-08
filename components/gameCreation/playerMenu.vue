@@ -31,14 +31,18 @@ export default {
     playerRow,
   },
   data: () => ({
-    players: [{ name: '', account: false }],
+    players: [{ name: '', games: '' }],
   }),
   methods: {
     addPlayer() {
-      this.players.push({ name: '', account: false })
+      this.players.push({
+        name: '',
+        games: '',
+      })
     },
     handlePlayerNameInput(name, index) {
       this.players[index].name = name
+      this.players[index].games = Math.floor(Math.random() * Math.floor(1000))
       this.$emit('input', this.players)
     },
   },

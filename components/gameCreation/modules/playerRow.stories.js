@@ -19,9 +19,11 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: '<playerRow v-bind="$props" @input="onInput" @delete="onDelete"/>',
 })
+
 export const Default = Template.bind({})
 Default.args = {
   player: {
-    name: '',
+    name: 'Test',
+    games: 312,
   },
 }

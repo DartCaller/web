@@ -22,9 +22,7 @@
       </div>
     </div>
     <div>
-      <p v-if="!nameIsEmpty" class="gamesPlayed">
-        {{ Math.floor(Math.random() * Math.floor(1000)) }} games
-      </p>
+      <p v-if="!nameIsEmpty" class="gamesPlayed">{{ player.games }} games</p>
       <delete-svg class="delete_button" @click="$emit('delete')" />
     </div>
   </div>
@@ -54,7 +52,6 @@ export default {
   methods: {
     onSubmit() {
       this.editMode = false
-      this.newName = ''
       this.$emit('input', this.newName)
     },
   },
