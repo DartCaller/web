@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mb">Players</h2>
+    <h2 class="mb text-center">Players</h2>
     <div class="player_list">
       <playerRow
         v-for="(player, index) in players"
