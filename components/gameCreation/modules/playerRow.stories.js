@@ -9,6 +9,10 @@ export default {
     onInput: action('input'),
     onDelete: action('delete'),
   },
+  argTypes: {
+    onDelete: { table: { disable: true } },
+    onInput: { table: { disable: true } },
+  },
   parameters: {
     backgrounds: { default: 'gray' },
   },
