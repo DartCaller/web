@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import PureCorrectScore from 'PureCorrectScore.vue'
+import PureCorrectScore from '~/components/common/modal/PureCorrectScore.vue'
 
 export default {
   name: 'Modal',
