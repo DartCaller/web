@@ -5,6 +5,7 @@
       <playerRow
         v-for="(player, index) in players"
         :key="'p-' + index"
+        data-test="player-menu__row"
         :player="player"
         class="player_row"
         @input="(name) => handlePlayerNameInput(name, index)"
@@ -13,7 +14,11 @@
       />
     </div>
     <div class="addPlayer">
-      <styled-button icon="plus" @click.native="addPlayer">
+      <styled-button
+        icon="plus"
+        data-test="player-menu__add-row"
+        @click.native="addPlayer"
+      >
         Add Player
       </styled-button>
     </div>
