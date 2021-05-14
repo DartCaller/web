@@ -1,37 +1,26 @@
 <template>
-  <div class="in_game__grid">
-    <div class="score__card box_shadow">
-      <scoreTable
-        :scores="absoluteScores"
-        :players="players"
-        :show-extra-bg-rows="2"
-      />
-    </div>
-    <actions class="action__card box_shadow" />
-    <div class="current_player__card box_shadow">
-      <currentPlayer
-        :scores-per-dart="lastThrows"
-        :current-player="currentPlayer"
-        :points-remaining="pointsRemainingForCurrentPlayer"
-      />
-    </div>
-    <div class="statistics__card box_shadow">
-      <h2>Coming Soon</h2>
-    </div>
-  </div>
+  <pureIngame
+    v-if="game"
+    :player-names="game.playerNames"
+    :player-order="game.playerOrder"
+    :current-player="game.currentPlayer"
+    :scores="game.scores"
+    :current-round="game.currentRoundIndex + 1"
+  />
 </template>
 
 <script>
-import scoreTable from '~/components/scoreTable'
-import currentPlayer from '~/components/inGame/currentPlayer/currentPlayer'
-import actions from '~/components/inGame/actions'
+import pureIngame from '~/components/inGame/pureIngame'
 
 export default {
   name: 'InGame',
-  components: { scoreTable, currentPlayer, actions },
-  data: () => ({}),
+  components: { pureIngame },
+  data: () => ({
+    game: null,
+    loading: null,
+  }),
   computed: {
-    game() {
+    networkGame() {
       return this.$store.state.game.serverState
     },
     players() {
@@ -39,64 +28,23 @@ export default {
         (playerId) => this.game.playerNames[playerId]
       )
     },
-    currentPlayer() {
-      return this.game.playerNames[this.game.currentPlayer]
-    },
-    scores() {
-      return this.game.scores
-    },
-    lastThrows() {
-      const lastRoundOfPlayer = this.scores[this.game.currentPlayer][
-        this.scores[this.game.currentPlayer].length - 1
-      ]
-      const lastRoundThrows = lastRoundOfPlayer.match(/([SDT-]\d\d?\d?)/g)
-      if (lastRoundThrows === null || lastRoundThrows.length === 3) {
-        return []
-      } else {
-        return lastRoundThrows.map(this.convertScoreFieldToScore)
-      }
-    },
-    absoluteScores() {
-      const absoluteScores = {}
-      for (const player in this.scores) {
-        if (!Object.prototype.hasOwnProperty.call(this.scores, player)) return
-        const playerScores = this.scores[player]
-        const absolutePlayerScores = (absoluteScores[player] = [])
-        for (
-          let gameRoundIndex = 0;
-          gameRoundIndex < playerScores.length;
-          gameRoundIndex++
-        ) {
-          const gameRound = playerScores[gameRoundIndex]
-          if (gameRoundIndex === 0) {
-            // That's our start number, no conversion needed
-            absolutePlayerScores.push(gameRound)
-          } else {
-            const previousRoundScore =
-              absolutePlayerScores[absolutePlayerScores.length - 1]
-            const roundThrows = gameRound.match(/([SDT-]\d\d?\d?)/g)
-            const roundScore = roundThrows.reduce(
-              (currentScore, scoredField) => {
-                const number = this.convertScoreFieldToScore(scoredField)
-                return currentScore - number
-              },
-              previousRoundScore
-            )
-            absolutePlayerScores.push(roundScore)
-          }
+  },
+  watch: {
+    networkGame: {
+      deep: true,
+      handler(newV, oldV) {
+        if (newV.currentPlayer !== oldV.currentPlayer && this.game) {
+          this.updateGame({ scores: newV.scores })
+          setTimeout(() => {
+            this.updateGame(newV)
+          }, 1000)
+        } else {
+          this.updateGame(newV)
         }
-      }
-      return this.game.playerOrder.map((playerId) => absoluteScores[playerId])
-    },
-    pointsRemainingForCurrentPlayer() {
-      const currentPlayerIndex = this.game.playerOrder.indexOf(
-        this.game.currentPlayer
-      )
-      return +this.absoluteScores[currentPlayerIndex][
-        this.absoluteScores[currentPlayerIndex].length - 1
-      ]
+      },
     },
   },
+  created() {},
   mounted() {
     if (!this.$store.state.game.subscribed) {
       this.loading = this.$vs.loading({
@@ -109,23 +57,11 @@ export default {
         color: '#fff',
       })
       this.connectToGame(this.$route.params.gameID)
+    } else {
+      this.game = this.networkGame
     }
   },
   methods: {
-    convertScoreFieldToScore(scoreField) {
-      // e.g T20 (means Triple 20) -> 60
-      const num = scoreField.match(/\d+/).map(Number)[0]
-      switch (scoreField[0]) {
-        case 'S':
-          return num
-        case 'D':
-          return 2 * num
-        case 'T':
-          return 3 * num
-        default:
-          return 0
-      }
-    },
     connectToGame(gameID) {
       this.$io.socket.onopen = () => {
         this.$io.socket.send(
@@ -143,6 +79,12 @@ export default {
           }
           this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
         })
+      }
+    },
+    updateGame(newGameState) {
+      this.game = {
+        ...this.game,
+        ...newGameState,
       }
     },
   },
