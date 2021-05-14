@@ -99,6 +99,15 @@ export default {
   },
   mounted() {
     if (!this.$store.state.game.subscribed) {
+      this.loading = this.$vs.loading({
+        target: '#loading_container',
+        scale: '1.3',
+        type: 'circles',
+        text: 'Loading Game ...',
+        background: 'primary',
+        opacity: 0.5,
+        color: '#fff',
+      })
       this.connectToGame(this.$route.params.gameID)
     }
   },
@@ -130,6 +139,7 @@ export default {
           if (this.$store.state.game.gameState === 'JOIN') {
             this.$store.commit('game/SET_SUBSCRIBED', true)
             this.$store.commit('game/SET_GAME_STATE', 'PLAY')
+            this.loading.close()
           }
           this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
         })

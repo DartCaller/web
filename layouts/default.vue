@@ -14,6 +14,7 @@
       </template>
     </vs-navbar>
     <Nuxt class="flex_grow" />
+    <div id="loading_container" />
     <ModalSlot class="global_modal" />
   </div>
 </template>
@@ -52,7 +53,8 @@ export default {
   flex-grow: 1;
 }
 
-.global_modal {
+.global_modal,
+.loading_container {
   position: absolute;
   width: 100%;
   height: 100%;
