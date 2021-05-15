@@ -1,4 +1,5 @@
-# dart-web
+[![ci](https://github.com/DartCaller/web/actions/workflows/ci.yml/badge.svg)](https://github.com/DartCaller/web/actions/workflows/ci.yml)
+# Dart Web
 
 ## Build Setup
 
