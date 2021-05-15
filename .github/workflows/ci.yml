@@ -1,4 +1,4 @@
-name: ci
+name: Tests
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  ci:
+  test:
     runs-on: ${{ matrix.os }}
 
     strategy:
