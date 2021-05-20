@@ -10,7 +10,7 @@ module.exports = {
     '^!style-loader!css-loader!sass-loader!(.*\\.scss)$': '$1',
     'vue-countup-v2': '<rootDir>/test/mock/countUp.vue',
   },
-  testPathIgnorePatterns: ['/test/e2e'],
+  testPathIgnorePatterns: ['/test/cypress'],
   transformIgnorePatterns: ['/node_modules/(?!(@storybook/.*\\.vue$)|vuesax)'],
   moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
 }
