@@ -40,4 +40,7 @@ jobs:
       - name: Run Integration tests 🧪
         uses: cypress-io/github-action@v2
         with:
+          browser: chrome
+          headless: true
           start: npm run storybook
+          command: npm run test:e2e
