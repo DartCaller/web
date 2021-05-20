@@ -43,4 +43,4 @@ jobs:
           browser: chrome
           headless: true
           start: npm run storybook
-          command: npm run test:e2e
+          command: npm run test:ci:e2e
