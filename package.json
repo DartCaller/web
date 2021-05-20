@@ -12,7 +12,6 @@
     "lint": "npm run lint:js && npm run lint:style",
     "test:snapshot": "jest",
     "test:e2e": "cypress run --headless --spec 'test/cypress/integration/*'",
-    "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
