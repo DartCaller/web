@@ -1,13 +1,19 @@
 <template>
   <div class="current__player__container">
     <h1 class="colored">{{ currentPlayer }}</h1>
-    <h2><span id="current__player__score">0</span> Points remaining</h2>
+    <h2>
+      <CountUp
+        :delay="0"
+        :end-val="pointsRemaining"
+        :options="countUpOptions"
+      />
+      Points remaining
+    </h2>
     <scorePerDartDisplay :scores-per-dart="scoresPerDart" />
   </div>
 </template>
 
 <script>
-import { CountUp } from 'countup.js'
 import scorePerDartDisplay from '~/components/inGame/currentPlayer/scorePerDartDisplay.vue'
 
 export default {
@@ -29,21 +35,17 @@ export default {
       required: true,
     },
   },
-  data: () => ({
-    countAnimation: null,
-  }),
-  watch: {
-    pointsRemaining(newV, oldV) {
-      this.countAnimation.update(newV)
-    },
-  },
-  mounted() {
-    this.countAnimation = new CountUp(
-      'current__player__score',
-      this.pointsRemaining,
-      { startVal: this.pointsRemaining, duration: 1 }
-    )
-    this.countAnimation.start()
+  // eslint-disable-next-line object-shorthand
+  data: function () {
+    return {
+      countAnimation: null,
+      countUpOptions: {
+        duration: 1,
+        useEasing: true,
+        useGrouping: true,
+        startVal: this.pointsRemaining,
+      },
+    }
   },
 }
 </script>
