@@ -240,7 +240,12 @@ exports[`Storyshots CurrentPlayer Default 1`] = `
     </h1>
      
     <h2>
-      140 Points remaining
+      <span>
+        140
+      </span>
+      
+    Points remaining
+  
     </h2>
      
     <div
