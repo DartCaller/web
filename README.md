@@ -1,5 +1,6 @@
-![](https://img.shields.io/github/license/DartCaller/web)
 [![ci](https://github.com/DartCaller/web/actions/workflows/ci.yml/badge.svg)](https://github.com/DartCaller/web/actions/workflows/ci.yml)
+![](https://img.shields.io/github/license/DartCaller/web)
+![](https://img.shields.io/tokei/lines/github/DartCaller/web)
 
 # Dart Frontend
 This Repo contains the user facing frontend which enables Dart Game Management. It features and enables automatic Dart Score tracking via https://github.com/DartCaller/api and https://github.com/DartCaller/darts-recognition.
