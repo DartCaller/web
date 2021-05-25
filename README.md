@@ -14,13 +14,13 @@ This Repo contains the user facing frontend which enables Dart Game Management. 
 - [:bug: Testing](#bug)
   - [:sparkles: Linter](#sparkles)
   - [:rotating_light: Cypress](#rotating_light)
-  - [:joker: Jest](#joker)
+  - [:black_joker: Jest](#joker)
   - [:book: Storybook](#book)
 - [:lock_with_ink_pen: License](#lock_with_ink_pen)
 
 <a name="package"/>
 
-### :package: Tech Stack
+## :package: Tech Stack
 - Framework: [Nuxt.js](https://nuxtjs.org/)
 - State Handling: [Vuex](https://vuex.vuejs.org/)
 - Design Framework: [Vuesax](https://vuesax.com/)
@@ -107,7 +107,7 @@ This repo makes use of [Storybook](https://storybook.js.org/) to build component
 
 <a name="joker"/>
 
-### :joker: Jest
+### :black_joker: Jest
 We currently use jest for snapshot testing the components to make sure we get notified about markup changes. See https://storybook.js.org/docs/vue/workflows/snapshot-testing for more info
 
 <a name="rotating_light"/>
