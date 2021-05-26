@@ -12,6 +12,7 @@ module.exports = {
     'prettier/vue',
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended',
+    'plugin:cypress/recommended',
     'prettier',
   ],
   plugins: ['prettier'],

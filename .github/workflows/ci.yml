@@ -1,19 +1,25 @@
-name: ci
+name: Tests
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
+on: [push, pull_request]
 
 jobs:
-  ci:
+  pre_job:
+    # continue-on-error: true # Uncomment once integration is finished
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@v3.4.0
+        with:
+          concurrent_skipping: 'same_content'
+          do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
+  test:
+    needs: pre_job
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ${{ matrix.os }}
-
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -42,5 +48,13 @@ jobs:
       - name: Run linter 👀
         run: npm run lint
 
-      - name: Run tests 🧪
-        run: npm run test
+      - name: Run Snapshot tests 🧪
+        run: npm run test:snapshot
+
+      - name: Run Integration tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm run storybook
+          command: npm run test:ci:e2e

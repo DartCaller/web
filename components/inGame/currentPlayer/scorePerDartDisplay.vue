@@ -4,10 +4,10 @@
       v-for="i in 3"
       :key="i"
       class="dart"
-      :class="{ active: scoresPerDart[i - 1] }"
+      :class="{ active: stringScores[i - 1] }"
     >
       <dart-svg class="dartSvg" />
-      <p class="score">{{ scoresPerDart[i - 1] || '_' }}</p>
+      <p class="score">{{ stringScores[i - 1] || '_' }}</p>
     </div>
   </div>
 </template>
@@ -26,6 +26,11 @@ export default {
       required: true,
     },
   },
+  computed: {
+    stringScores() {
+      return this.scoresPerDart.map((i) => i !== undefined && i.toString())
+    },
+  },
 }
 </script>
 
@@ -38,7 +43,7 @@ export default {
   flex-direction: column;
 
   .score {
-    color: $lightgrey;
+    color: rgba(var(--lightgrey), 1);
   }
 
   .dartSvg {
@@ -47,17 +52,17 @@ export default {
     margin: 0 10px;
 
     g {
-      fill: $lightgrey;
+      fill: rgba(var(--lightgrey), 1);
     }
   }
 
   &.active {
     .dartSvg g {
-      fill: $white;
+      fill: #fff;
     }
 
     .score {
-      color: $white;
+      color: #fff;
     }
   }
 

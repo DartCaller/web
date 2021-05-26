@@ -1,43 +1,31 @@
 <template>
-  <div>
-    <template v-if="$store.state.game.serverState.legFinished">
-      <styledButton
-        icon="plus"
-        small-text
-        @click.native="$router.push({ path: '/create-game' })"
-        >New Game</styledButton
-      >
-      <styledButton icon="plus" small-text @click.native="nextLeg"
-        >Next Leg</styledButton
-      >
-      <styledButton icon="pencil" small-text>Statistics</styledButton>
-      <styledButton
-        icon="check"
-        small-text
-        @click.native="$router.push({ path: '/' })"
-        >Exit</styledButton
-      >
-    </template>
-    <template v-else>
-      <styledButton icon="check" small-text>Finish Current Turn</styledButton>
-      <styledButton
-        icon="pencil"
-        small-text
-        @click.native="$store.commit('OPEN_MODAL', 'CorrectScore')"
-        >Correct Score</styledButton
-      >
-      <styledButton icon="history" small-text>Revert last Dart</styledButton>
-    </template>
-  </div>
+  <actionsPure
+    :leg-finished="$store.state.game.serverState.legFinished"
+    @createGame="onCreateGame"
+    @nextLeg="onNextLeg"
+    @exit="onExit"
+    @correctScore="onCorrectScore"
+    @revertDart="onRevertDart"
+  />
 </template>
 
 <script>
-import styledButton from '~/components/common/StyledButton'
+import actionsPure from './actionsPure'
 export default {
   name: 'Actions',
-  components: { styledButton },
+  components: { actionsPure },
   methods: {
-    nextLeg() {
+    onCreateGame() {
+      this.$router.push({ path: '/create-game' })
+    },
+    onExit() {
+      this.$router.push({ path: '/' })
+    },
+    onCorrectScore() {
+      this.$store.commit('OPEN_MODAL', 'CorrectScore')
+    },
+    onRevertDart() {},
+    onNextLeg() {
       this.$io.socket.send(
         JSON.stringify({
           type: 'NextLeg',

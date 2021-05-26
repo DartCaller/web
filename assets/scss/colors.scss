@@ -5,7 +5,9 @@ $red: #EE5622;
 $grey: #303030;
 $lightgrey: #454545;
 
-:root {
+:root * {
+  --grey: 48, 48, 48;
+  --lightgrey: 69, 69, 69;
   --vs-primary: 69, 69, 69;
   --vs-success: 20, 167, 108;
   --vs-gray-2: 69, 69, 69;

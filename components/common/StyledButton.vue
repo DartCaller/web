@@ -1,5 +1,5 @@
 <template>
-  <vs-button :color="buttonColor" :loading="loading">
+  <vs-button :color="buttonColor" :loading="loading" @click="$emit('click')">
     <component
       :is="activeIcon"
       v-if="activeIcon"
@@ -15,7 +15,6 @@ import check from '~/assets/images/check.svg?inline'
 import history from '~/assets/images/history.svg?inline'
 import pencil from '~/assets/images/pencil.svg?inline'
 import plus from '~/assets/images/plus.svg?inline'
-/* eslint-disable vue/no-unused-components */
 
 export default {
   name: 'StyledButton',

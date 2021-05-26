@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h2 class="mb">Players</h2>
+    <h2 class="mb text-center">Players</h2>
     <div class="player_list">
       <playerRow
         v-for="(player, index) in players"
-        :key="player.name"
+        :key="'p-' + index"
+        data-test="player-menu__row"
         :player="player"
         class="player_row"
         @input="(name) => handlePlayerNameInput(name, index)"
@@ -13,7 +14,11 @@
       />
     </div>
     <div class="addPlayer">
-      <styled-button icon="plus" @click.native="addPlayer">
+      <styled-button
+        icon="plus"
+        data-test="player-menu__add-row"
+        @click.native="addPlayer"
+      >
         Add Player
       </styled-button>
     </div>
@@ -31,14 +36,18 @@ export default {
     playerRow,
   },
   data: () => ({
-    players: [{ name: '', account: false }],
+    players: [{ name: '', games: '' }],
   }),
   methods: {
     addPlayer() {
-      this.players.push({ name: '', account: false })
+      this.players.push({
+        name: '',
+        games: '',
+      })
     },
     handlePlayerNameInput(name, index) {
       this.players[index].name = name
+      this.players[index].games = Math.floor(Math.random() * Math.floor(1000))
       this.$emit('input', this.players)
     },
   },
