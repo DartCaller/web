@@ -13,8 +13,8 @@
           :value="player.name"
           placeholder="Name"
           @input="newName = $event"
-          @blur="$emit('input', newName)"
-          @keyup.enter="$emit('input', newName)"
+          @blur="onSubmit"
+          @keyup.enter="onSubmit"
         />
         <p v-else class="label" @click="editMode = true">
           {{ player.name }}
@@ -22,9 +22,7 @@
       </div>
     </div>
     <div>
-      <p v-if="!nameIsEmpty" class="gamesPlayed">
-        {{ Math.floor(Math.random() * Math.floor(1000)) }} games
-      </p>
+      <p v-if="!nameIsEmpty" class="gamesPlayed">{{ player.games }} games</p>
       <delete-svg class="delete_button" @click="$emit('delete')" />
     </div>
   </div>
@@ -49,6 +47,12 @@ export default {
   computed: {
     nameIsEmpty() {
       return this.player.name === ''
+    },
+  },
+  methods: {
+    onSubmit() {
+      this.editMode = false
+      this.$emit('input', this.newName)
     },
   },
 }

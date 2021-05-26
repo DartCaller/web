@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mb">Settings</h2>
+    <h2 class="mb text-center">Settings</h2>
     <div class="row">
       <p>Game Mode</p>
       <vs-select

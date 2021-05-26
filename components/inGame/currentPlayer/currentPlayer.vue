@@ -1,7 +1,14 @@
 <template>
   <div class="current__player__container">
     <h1 class="colored">{{ currentPlayer }}</h1>
-    <h2>{{ pointsRemaining }} Points remaining</h2>
+    <h2>
+      <CountUp
+        :delay="0"
+        :end-val="pointsRemaining"
+        :options="countUpOptions"
+      />
+      Points remaining
+    </h2>
     <scorePerDartDisplay :scores-per-dart="scoresPerDart" />
   </div>
 </template>
@@ -27,6 +34,18 @@ export default {
       type: Number,
       required: true,
     },
+  },
+  // eslint-disable-next-line object-shorthand
+  data: function () {
+    return {
+      countAnimation: null,
+      countUpOptions: {
+        duration: 1,
+        useEasing: true,
+        useGrouping: true,
+        startVal: this.pointsRemaining,
+      },
+    }
   },
 }
 </script>
