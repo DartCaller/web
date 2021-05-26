@@ -5,6 +5,10 @@
 # Dart Frontend
 This Repo contains the user facing frontend which enables Dart Game Management. It features and enables automatic Dart Score tracking via https://github.com/DartCaller/api and https://github.com/DartCaller/darts-recognition.
 
+#### Deployments
+- https://dartcaller.github.io/web - the Storybook ([exlpained down below](#book)) of this repo
+- https://dashboard.cypress.io/projects/iei5pi/runs - the public [cypress](#rotating_light) dashboard showing the latests integration test runs
+
 
 # Table of Contents
 - [:package:Tech Stack](#package)  
@@ -105,6 +109,8 @@ npm run lint
 
 ### :book: Storybook
 This repo makes use of [Storybook](https://storybook.js.org/) to build components in isolation. This tools pushes us not only to build more in a [Component Driven Development](https://www.componentdriven.org/) kind of way (from the “bottom up” starting with components and ending with screens) but also to split our components into [presentational and container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0). This combination helps to write better tests more easily and also helps for the code quality.
+
+The storybook is deployed for everyone to see under https://dartcaller.github.io/web
 
 <a name="joker"/>
 
