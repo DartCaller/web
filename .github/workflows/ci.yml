@@ -15,6 +15,8 @@ jobs:
           concurrent_skipping: 'same_content'
           do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
   test:
+    needs: pre_job
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ${{ matrix.os }}
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
