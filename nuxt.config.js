@@ -24,6 +24,10 @@ export default {
     { src: '~/plugins/auth0', ssr: false },
   ],
 
+  env: {
+    socketHost: process.env.SOCKET_HOST || 'dart-api.timon.codes',
+  },
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

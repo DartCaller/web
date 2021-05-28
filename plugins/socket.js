@@ -1,21 +1,57 @@
-// import socket from 'socket.io-client'
+class Socket {
+  constructor({ store }) {
+    this.socketHost = process.env.socketHost
+    this.socket = null
+    this.store = store
+  }
 
-export default ({ app, route, store, req }, inject) => {
-  const io = {}
-  const socketHost = 'localhost:8080'
-  io.socket = new WebSocket(`ws://${socketHost}/ws`)
-
-  // io.socket = await socket(socketHost, {
-  //   path: '/ws',
-  //   reconnect: true,
-  //   transports: ['websocket'],
-  // })
-
-  io.addEventListener = (cb) => {
-    io.socket.addEventListener('message', (data) => {
-      cb(data)
+  connect() {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => this.onFailedAuth(reject), 5000)
+      this.socket = new WebSocket(`ws://${this.socketHost}/ws`)
+      this.socket.onerror = console.error
+      this.socket.onopen = this.authenticate.bind(this)
+      this.onMessage((data) => {
+        data.authenticated
+          ? this.onSuccessfulAuth(resolve, timeout)
+          : this.onFailedAuth(reject)
+      })
     })
   }
 
-  inject('io', io)
+  send(message) {
+    if (this.socket) {
+      this.socket.send(JSON.stringify(message))
+    } else throw new Error('Socket not connected')
+  }
+
+  onMessage(cb) {
+    if (this.socket) {
+      this.socket.addEventListener('message', ({ data }) => {
+        cb(JSON.parse(data))
+      })
+    } else throw new Error('Socket not connected')
+  }
+
+  authenticate() {
+    this.send({
+      type: 'Authenticate',
+      accessToken: this.store.state.accessToken,
+    })
+  }
+
+  onSuccessfulAuth(resolve, timeout) {
+    clearTimeout(timeout)
+    resolve()
+  }
+
+  onFailedAuth(reject) {
+    this.socket = null
+    reject(new Error("Couldn't establish Ws Connection"))
+  }
+}
+
+export default ({ app, route, store, req }, inject) => {
+  store.commit('SET_SOCKET_CONNECTION', true)
+  inject('socket', new Socket({ store }))
 }

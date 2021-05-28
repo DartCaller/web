@@ -29,29 +29,36 @@ export default {
     settings: {},
     loading: false,
   }),
+  async mounted() {
+    try {
+      await this.$socket.connect()
+    } catch (e) {
+      this.$vs.notification({
+        progress: 'auto',
+        position: 'top-center',
+        duration: 5000,
+        title: 'Not Authenticated',
+        text: e,
+        color: 'danger',
+      })
+    }
+  },
   methods: {
     startGame() {
       this.loading = true
       this.$store.commit('game/SET_GAME_STATE', 'CREATE')
-      this.$io.socket.send(
-        JSON.stringify({
-          type: 'CreateGame',
-          players: this.players.map((e) => e.name),
-          gameMode: this.settings.gameMode,
-        })
-      )
-      this.$io.addEventListener((data) => {
+      this.$socket.send({
+        type: 'CreateGame',
+        players: this.players.map((e) => e.name),
+        gameMode: this.settings.gameMode,
+      })
+      this.$socket.onMessage((data) => {
         if (this.$store.state.game.gameState === 'CREATE') {
           this.$store.commit('game/SET_SUBSCRIBED', true)
-          const initialGameState = JSON.parse(data.data)
-          this.$router.push({
-            path: `/${initialGameState.gameID}/play`,
-          })
+          this.$router.push({ path: `/${data.gameID}/play` })
           this.$store.commit('game/SET_GAME_STATE', 'PLAY')
-          this.$store.commit('game/SET_SERVER_STATE', initialGameState)
-        } else {
-          this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
         }
+        this.$store.commit('game/SET_SERVER_STATE', data)
       })
     },
   },
