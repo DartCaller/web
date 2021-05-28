@@ -82,10 +82,7 @@ export default {
       }
     },
     updateGame(newGameState) {
-      this.game = {
-        ...this.game,
-        ...newGameState,
-      }
+      this.game = { ...this.game, ...newGameState }
     },
   },
 }
