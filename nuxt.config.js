@@ -22,6 +22,7 @@ export default {
     { src: '~/plugins/socket', ssr: false },
     { src: '~/plugins/countUp', ssr: false },
     { src: '~/plugins/auth0', ssr: false },
+    { src: '~/plugins/axios', ssr: false },
   ],
 
   env: {
