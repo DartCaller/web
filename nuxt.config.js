@@ -32,12 +32,11 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
-  ],
+  buildModules: [].concat(
+    process.env.NODE_ENV === 'production'
+      ? []
+      : ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module']
+  ),
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
