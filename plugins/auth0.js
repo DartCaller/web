@@ -60,7 +60,7 @@ class Auth0Util {
 
   isAuthenticated() {
     if (this.context) {
-      const expiresAt = this.context.app.store.state.user.expiresAt
+      const expiresAt = this.context.app.store.state.expiresAt
       return new Date().getTime() < expiresAt
     } else return false
   }
