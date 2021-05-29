@@ -25,7 +25,8 @@ export default {
   ],
 
   env: {
-    socketHost: process.env.SOCKET_HOST || 'dart-api.timon.codes',
+    BACKEND_ADDRESS: process.env.REST_ADDRESS || 'https://dart-api.timon.codes',
+    WS_ADDRESS: process.env.WS_ADDRESS || 'wss://dart-api.timon.codes/ws',
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -1,6 +1,5 @@
 class Socket {
   constructor({ store }) {
-    this.socketHost = process.env.socketHost
     this.socket = null
     this.store = store
   }
@@ -8,7 +7,7 @@ class Socket {
   connect() {
     return new Promise((resolve, reject) => {
       const timeout = setTimeout(() => this.onFailedAuth(reject), 5000)
-      this.socket = new WebSocket(`ws://${this.socketHost}/ws`)
+      this.socket = new WebSocket(process.env.WS_ADDRESS)
       this.socket.onerror = console.error
       this.socket.onopen = this.authenticate.bind(this)
       this.onMessage((data) => {
