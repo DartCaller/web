@@ -10,8 +10,7 @@ class Auth0Util {
         clientID: 'OE79hFw5JTRDFTp5j7KQLEQrTw2Woaei',
         redirectUri: this.getBaseUrl() + '/callback',
         audience: 'https://dartcaller.eu.auth0.com/api/v2/',
-        responseType: 'token id_token',
-        scope: 'openid profile email',
+        responseType: 'token',
       })
 
       setInterval(() => {
@@ -41,7 +40,6 @@ class Auth0Util {
     // eslint-disable-next-line no-console
     if (process.env.NODE_ENV === 'development') console.info(accessToken)
     this.context.app.store.commit('SET_USER_ACCESS_TOKEN', accessToken)
-    this.context.app.store.commit('SET_USER_ID_TOKEN', idToken)
     this.context.app.store.commit(
       'SET_USER_EXPIRESAT',
       expiresIn * 1000 + new Date().getTime()
