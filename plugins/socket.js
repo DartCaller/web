@@ -52,6 +52,5 @@ class Socket {
 }
 
 export default ({ app, route, store, req }, inject) => {
-  store.commit('SET_SOCKET_CONNECTION', true)
   inject('socket', new Socket({ store }))
 }
