@@ -34,10 +34,10 @@ export default {
   },
   methods: {
     login() {
-      this.$auth.login()
+      this.$auth0.login()
     },
     logout() {
-      this.$auth.logout()
+      this.$auth0.logout()
     },
   },
 }
