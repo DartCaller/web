@@ -5,13 +5,13 @@
 # Dart Frontend
 This Repo contains the user facing frontend which enables Dart Game Management. It features and enables automatic Dart Score tracking via https://github.com/DartCaller/api and https://github.com/DartCaller/darts-recognition.
 
-#### Deployments
+### Deployments
 - https://dartcaller.github.io/web - the Storybook ([exlpained down below](#book)) of this repo
 - https://dashboard.cypress.io/projects/iei5pi/runs - the public [cypress](#rotating_light) dashboard showing the latests integration test runs
 
 
 # Table of Contents
-- [:package:Tech Stack](#package)  
+- [:package: Tech Stack](#package)  
 - [:computer: Running Locally](#computer)
   - [:straight_ruler: Prerequisits](#straight_ruler)
   - [:running: Run](#running)
@@ -25,7 +25,7 @@ This Repo contains the user facing frontend which enables Dart Game Management. 
 
 <a name="package"/>
 
-## :package: Tech Stack
+# :package: Tech Stack
 - Framework: [Nuxt.js](https://nuxtjs.org/)
 - State Handling: [Vuex](https://vuex.vuejs.org/)
 - Design Framework: [Vuesax](https://vuesax.com/)
@@ -35,7 +35,7 @@ This Repo contains the user facing frontend which enables Dart Game Management. 
 
 <a name="computer"/>
 
-## :computer: Running Locally
+# :computer: Running Locally
 <a name="straight_ruler"/>
 
 ### :straight_ruler: Prerequisits
@@ -77,7 +77,7 @@ So, when you run this projet locally you either spin up https://github.com/DartC
 
 <a name="bug"/>
 
-## :bug: Testing
+# :bug: Testing
 
 ```bash
 # run linter
@@ -124,5 +124,5 @@ Cypress is currently our tool to facilitate integration testing on the component
 
 <a name="lock_with_ink_pen"/>
 
-## :lock_with_ink_pen: License
+# :lock_with_ink_pen: License
 Distributed under the GNU GPLv3 License. See [LICENSE](LICENSE) for more information.
