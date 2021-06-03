@@ -10,7 +10,10 @@
         </NuxtLink>
         <styledButton>Profile</styledButton>
         <styledButton>Settings</styledButton>
-        <styledButton>Logout</styledButton>
+        <styledButton v-if="$store.state.accessToken === null" @click="login">
+          Login
+        </styledButton>
+        <styledButton v-else @click="logout">Logout</styledButton>
       </template>
     </vs-navbar>
     <Nuxt class="flex_grow" />
@@ -28,6 +31,14 @@ export default {
   components: {
     styledButton,
     ModalSlot,
+  },
+  methods: {
+    login() {
+      this.$auth0.login()
+    },
+    logout() {
+      this.$auth0.logout()
+    },
   },
 }
 </script>
