@@ -19,11 +19,11 @@ This repository contains the user-facing frontend, which enables dart game manag
   - [:running: Run](#running)
   - [:gear: Configuration](#gear)
 - [:lock: Security](#lock)
+- [:book: Storybook](#book)
 - [:bug: Testing](#bug)
   - [:sparkles: Linter](#sparkles)
-  - [:rotating_light: Cypress](#rotating_light)
   - [:black_joker: Jest](#joker)
-  - [:book: Storybook](#book)
+  - [:rotating_light: Cypress](#rotating_light)
 - [:lock_with_ink_pen: License](#lock_with_ink_pen)
 
 <a name="package"/>
@@ -91,36 +91,6 @@ Furthermore, I currently have the variables for the Authorization Grant Flow End
 This project uses [Auth0](https://auth0.com/) and the [Authorization Code Flow](https://auth0.com/docs/flows/authorization-code-flow) for WS and HTTP authentication.
 Of course, the production deployment uses SSL/TLS for both WS (meaning `wss://`) and HTTP (meaning `https://`) requests.  
 
-<a name="bug"/>
-
-# :bug: Testing
-
-```bash
-# run linter
-$ npm run lint
-
-# run storybook
-$ npm run storybook
-
-# run jest snapshot tests
-$ npm run test:snapshot
-
-# run headless Integration tests
-$ npm run test:ci:e2e
-```
-
-Currently, this repo is equipped with a few testing tools that range from linters over snapshot tests to integration tests.
-
-<a name="sparkles"/>
-
-### :sparkles: Linter
-For linting and code formatting we use [Prettier](https://prettier.io/), [Eslint](https://eslint.org/) & [Styling](https://stylelint.io/). 
-
-It will run the linters before every commit automatically, ensuring that only correctly formatted code gets committed.
-```bash
-npm run lint
-```
-
 <a name="book"/>
 
 ### :book: Storybook
@@ -156,15 +126,54 @@ So to summarize, Storybook:
 
 Again, my storybook is deployed for everyone to see under https://dartcaller.github.io/web
 
+
+<a name="bug"/>
+
+# :bug: Testing
+
+```bash
+# run linter
+$ npm run lint
+
+# run storybook
+$ npm run storybook
+
+# run jest snapshot tests
+$ npm run test:snapshot
+
+# run headless Integration tests
+$ npm run test:ci:e2e
+```
+
+Currently, this repo is equipped with a few testing tools that range from linters over snapshot tests to integration tests.
+In the following paragraphs I will go through the different testing tools used.
+
+<a name="sparkles"/>
+
+### :sparkles: Linter
+For linting and code formatting we use [Prettier](https://prettier.io/), [Eslint](https://eslint.org/) & [Styling](https://stylelint.io/). 
+
+It will run the linters before every commit automatically, ensuring that only correctly formatted code gets committed.
+```bash
+npm run lint
+```
+
 <a name="joker"/>
 
 ### :black_joker: Jest
-We currently use jest for snapshot testing the components to make sure we get notified about markup changes. See https://storybook.js.org/docs/vue/workflows/snapshot-testing for more info.
+As I already explpained in the paragraph about [Storybook](#book), Snapshot testing becomes super easy when I split my components into Presentational and Container Components. With the nice testing integrations from Storybook, I can use Jest to take a screenshot of the html markup of each component. Jest safes this information and if the markup changes, future snapshot tests fail. In that case, I then have to look if these markup changes were by accident and so represent a bug or not.
+
+See https://storybook.js.org/docs/vue/workflows/snapshot-testing for more info.
 
 <a name="rotating_light"/>
 
 ### :rotating_light: Cypress
-Cypress is currently our tool to facilitate integration testing on the components. More information on either https://cypress.io or https://storybook.js.org/docs/vue/workflows/interaction-testing
+Cypress is currently our tool to facilitate integration testing on the components. It is able to simulate user interactions on query the website's markup which makes it perfect for integration tests.
+It also provides Screenshots and Videos of the test runs via a dashboard.
+
+https://dashboard.cypress.io/projects/iei5pi/runs shows my Cypress dashboard where you can see past runs and also the screenshots and videos belonging to them.
+
+More information on the tool either on https://cypress.io or https://storybook.js.org/docs/vue/workflows/interaction-testing
 
 <a name="lock_with_ink_pen"/>
 
