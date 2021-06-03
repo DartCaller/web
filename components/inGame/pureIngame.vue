@@ -61,7 +61,6 @@ export default {
       return this.playerOrder.map((playerId) => this.playerNames[playerId])
     },
     lastThrows() {
-      console.log(this.currentRound)
       const lastRoundOfPlayer =
         this.scores[this.currentPlayer][this.currentRound] || ''
       const lastRoundThrows = lastRoundOfPlayer.match(/([SDT-]\d\d?\d?)/g)

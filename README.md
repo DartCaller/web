@@ -5,17 +5,20 @@
 # Dart Frontend
 This Repo contains the user facing frontend which enables Dart Game Management. It features and enables automatic Dart Score tracking via https://github.com/DartCaller/api and https://github.com/DartCaller/darts-recognition.
 
-#### Deployments
+
+### Deployments
+- https://dart-web.timon.codes - the deployment of this website
 - https://dartcaller.github.io/web - the Storybook ([exlpained down below](#book)) of this repo
 - https://dashboard.cypress.io/projects/iei5pi/runs - the public [cypress](#rotating_light) dashboard showing the latests integration test runs
 
 
 # Table of Contents
-- [:package:Tech Stack](#package)  
+- [:package: Tech Stack](#package)  
 - [:computer: Running Locally](#computer)
   - [:straight_ruler: Prerequisits](#straight_ruler)
   - [:running: Run](#running)
   - [:gear: Configuration](#gear)
+- [:lock: Security](#lock)
 - [:bug: Testing](#bug)
   - [:sparkles: Linter](#sparkles)
   - [:rotating_light: Cypress](#rotating_light)
@@ -25,7 +28,7 @@ This Repo contains the user facing frontend which enables Dart Game Management. 
 
 <a name="package"/>
 
-## :package: Tech Stack
+# :package: Tech Stack
 - Framework: [Nuxt.js](https://nuxtjs.org/)
 - State Handling: [Vuex](https://vuex.vuejs.org/)
 - Design Framework: [Vuesax](https://vuesax.com/)
@@ -35,7 +38,7 @@ This Repo contains the user facing frontend which enables Dart Game Management. 
 
 <a name="computer"/>
 
-## :computer: Running Locally
+# :computer: Running Locally
 <a name="straight_ruler"/>
 
 ### :straight_ruler: Prerequisits
@@ -72,12 +75,23 @@ $ npm run generate
 <a name="gear"/>
 
 ### :gear: Configuration
-Currently the url where this frontend expects the server to answer is hard coded in two places as `localhost:8080`
-So, when you run this projet locally you either spin up https://github.com/DartCaller/api under this address or adjust the two hard coded values [here](https://github.com/DartCaller/web/blob/0330382725fbcc3269c1f33a80539c9a03aa73e2/components/common/modal/CorrectScore.vue#L148) & [here](https://github.com/DartCaller/web/blob/0330382725fbcc3269c1f33a80539c9a03aa73e2/plugins/socket.js#L5)
+
+|ENV             |Description        |Default                         |
+|--------------- |------------       |------------------------------  |
+|REST_ADDRESS    |Root REST Endpoint |`https://dart-api.timon.codes`  |
+|WS_ADDRESS      |Websocket Endpoint |`wss://dart-api.timon.codes/ws` |
+
+Furthermore, I currently have the variables for the Authorization Grant Flow Endpoint hardcoded. So if you want to run this project locally you might want to changes [these lines here](https://github.com/DartCaller/web/blob/b77c71c3fd96cc300c71f2a0a22ca7297f269829/plugins/auth0.js#L9-L12), to your liking.
+
+<a name="lock"/>
+
+## :lock: Security
+This project uses [Auth0](https://auth0.com/) and the [Authorization Code Flow](https://auth0.com/docs/flows/authorization-code-flow) for WS and HTTP authentication.
+Of course the production deployment uses SSL/TLS for both WS (meaning `wss://`) and HTTP (meaning `https://) requests  
 
 <a name="bug"/>
 
-## :bug: Testing
+# :bug: Testing
 
 ```bash
 # run linter
@@ -124,5 +138,5 @@ Cypress is currently our tool to facilitate integration testing on the component
 
 <a name="lock_with_ink_pen"/>
 
-## :lock_with_ink_pen: License
+# :lock_with_ink_pen: License
 Distributed under the GNU GPLv3 License. See [LICENSE](LICENSE) for more information.

@@ -26,12 +26,10 @@ export default {
     },
     onRevertDart() {},
     onNextLeg() {
-      this.$io.socket.send(
-        JSON.stringify({
-          type: 'NextLeg',
-          gameID: this.$route.params.gameID,
-        })
-      )
+      this.$socket.send({
+        type: 'NextLeg',
+        gameID: this.$route.params.gameID,
+      })
     },
   },
 }

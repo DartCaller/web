@@ -62,30 +62,22 @@ export default {
     }
   },
   methods: {
-    connectToGame(gameID) {
-      this.$io.socket.onopen = () => {
-        this.$io.socket.send(
-          JSON.stringify({
-            type: 'JoinGame',
-            gameID,
-          })
-        )
-        this.$store.commit('game/SET_GAME_STATE', 'JOIN')
-        this.$io.addEventListener((data) => {
-          if (this.$store.state.game.gameState === 'JOIN') {
-            this.$store.commit('game/SET_SUBSCRIBED', true)
-            this.$store.commit('game/SET_GAME_STATE', 'PLAY')
-            this.loading.close()
-          }
-          this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
-        })
-      }
+    async connectToGame(gameID) {
+      await this.$socket.connect()
+      this.$socket.send({ type: 'JoinGame', gameID })
+      this.$store.commit('game/SET_GAME_STATE', 'JOIN')
+
+      this.$socket.onMessage((data) => {
+        if (this.$store.state.game.gameState === 'JOIN') {
+          this.$store.commit('game/SET_SUBSCRIBED', true)
+          this.$store.commit('game/SET_GAME_STATE', 'PLAY')
+          this.loading.close()
+        }
+        this.$store.commit('game/SET_SERVER_STATE', JSON.parse(data.data))
+      })
     },
     updateGame(newGameState) {
-      this.game = {
-        ...this.game,
-        ...newGameState,
-      }
+      this.game = { ...this.game, ...newGameState }
     },
   },
 }

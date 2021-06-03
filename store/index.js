@@ -1,4 +1,6 @@
 export const state = () => ({
+  accessToken: null,
+  expiresAt: null,
   modal: null,
 })
 
@@ -8,5 +10,11 @@ export const mutations = {
   },
   CLOSE_MODAL(state) {
     state.modal = null
+  },
+  SET_USER_ACCESS_TOKEN(state, accessToken) {
+    state.accessToken = accessToken
+  },
+  SET_USER_EXPIRESAT(state, expiresAt) {
+    state.expiresAt = expiresAt
   },
 }
