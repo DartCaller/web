@@ -3,13 +3,13 @@
 ![](https://img.shields.io/tokei/lines/github/DartCaller/web)
 
 # Dart Frontend
-This Repo contains the user facing frontend which enables Dart Game Management. It features and enables automatic Dart Score tracking via https://github.com/DartCaller/api and https://github.com/DartCaller/darts-recognition.
+This repository contains the user-facing frontend, which enables dart game management. It features and enables automatic dart score tracking together with https://github.com/DartCaller/api and https://github.com/DartCaller/darts-recognition.
 
 
 ### Deployments
 - https://dart-web.timon.codes - the deployment of this website
-- https://dartcaller.github.io/web - the Storybook ([exlpained down below](#book)) of this repo
-- https://dashboard.cypress.io/projects/iei5pi/runs - the public [cypress](#rotating_light) dashboard showing the latests integration test runs
+- https://dartcaller.github.io/web - the Storybook ([exlpained down below](#book)) of this repository
+- https://dashboard.cypress.io/projects/iei5pi/runs - the public [cypress](#rotating_light) dashboard, showing the latests integration test runs
 
 
 # Table of Contents
@@ -45,17 +45,19 @@ This Repo contains the user facing frontend which enables Dart Game Management. 
 
 This project currently runs on node `v14.16.0`
 
-You can either use [NVM](https://github.com/nvm-sh/nvm) which will activate the correct node environment automatically with
+You can either use [NVM](https://github.com/nvm-sh/nvm), which will activate the correct node environment automatically with
 ```bash
-nvm use
+# has to be executed within the root directory of this repository
+$ nvm use
 ```
-or choose the Node / npm yourself. If you have a different Node Versions it might also build but it's not tested.
+or choose the Node / npm yourself. It might also build if you have a different Node Version, but I cannot promise it.
 
-After that you can install the dependencies
+After that, you can install the dependencies
 ```bash
 # install dependencies
 $ npm install
 ```
+
 <a name="running"/>
 
 ### :running: Run
@@ -81,13 +83,13 @@ $ npm run generate
 |REST_ADDRESS    |Root REST Endpoint |`https://dart-api.timon.codes`  |
 |WS_ADDRESS      |Websocket Endpoint |`wss://dart-api.timon.codes/ws` |
 
-Furthermore, I currently have the variables for the Authorization Grant Flow Endpoint hardcoded. So if you want to run this project locally you might want to changes [these lines here](https://github.com/DartCaller/web/blob/b77c71c3fd96cc300c71f2a0a22ca7297f269829/plugins/auth0.js#L9-L12), to your liking.
+Furthermore, I currently have the variables for the Authorization Grant Flow Endpoint hardcoded. So if you want to run this project locally, you might want to change [these lines here](https://github.com/DartCaller/web/blob/b77c71c3fd96cc300c71f2a0a22ca7297f269829/plugins/auth0.js#L9-L12) to use your authorization server of choice.
 
 <a name="lock"/>
 
 ## :lock: Security
 This project uses [Auth0](https://auth0.com/) and the [Authorization Code Flow](https://auth0.com/docs/flows/authorization-code-flow) for WS and HTTP authentication.
-Of course the production deployment uses SSL/TLS for both WS (meaning `wss://`) and HTTP (meaning `https://) requests  
+Of course, the production deployment uses SSL/TLS for both WS (meaning `wss://`) and HTTP (meaning `https://`) requests.  
 
 <a name="bug"/>
 
@@ -107,14 +109,14 @@ $ npm run test:snapshot
 $ npm run test:ci:e2e
 ```
 
-Currently this repo is equipped with a few testing tools that range from linters over snapshot tests to integration tests.
+Currently, this repo is equipped with a few testing tools that range from linters over snapshot tests to integration tests.
 
 <a name="sparkles"/>
 
 ### :sparkles: Linter
 For linting and code formatting we use [Prettier](https://prettier.io/), [Eslint](https://eslint.org/) & [Styling](https://stylelint.io/). 
 
-The linters will also be run before every commit to ensure that only proper formatted code gets committed.
+It will run the linters before every commit automatically, ensuring that only correctly formatted code gets committed.
 ```bash
 npm run lint
 ```
@@ -122,14 +124,42 @@ npm run lint
 <a name="book"/>
 
 ### :book: Storybook
-This repo makes use of [Storybook](https://storybook.js.org/) to build components in isolation. This tools pushes us not only to build more in a [Component Driven Development](https://www.componentdriven.org/) kind of way (from the “bottom up” starting with components and ending with screens) but also to split our components into [presentational and container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0). This combination helps to write better tests more easily and also helps for the code quality.
+With this project, I discovered [Storybook](https://storybook.js.org/) for the first time. So let me give you an overview of what it does and why I fell totally in love with it to ensure Clean Code, Documentation, and easy testability.
 
-The storybook is deployed for everyone to see under https://dartcaller.github.io/web
+#### :question: What is Storybook
+To quote an excellent first explanation from [this article](https://www.komododigital.co.uk/insights/react-storybook-why-should-you-use-it):
+> Storybook is a development environment tool which is used as a playground for UI components. It allows us, the developers, to create and test components in isolation.
+
+Feel free to open my storybook under https://dartcaller.github.io/web in a second tab so that the following descriptions are better understandable.
+
+With Storybook, you write a little "story" file for each frontend component, in which you import your component and show various use case examples ([here]() an example of such a story file in my repo). When you then start your Storybook UI locally, Storybook shows your component in an iFrame sandbox using the use case examples you specified. Showing all specified components on the left provides you with an organized environment and lets you interact with every component in isolation.
+
+#### :heart: Why I fell in love with Storybook
+I immediately want to start and respond to anyone saying, "If Storybook is so great, why did you use it so little? You barely have all components in it and a bare minimum amount of test cases". Yes, that's true. The thing is that I discovered Storybook at the very end of the project. This and the fact that the last weeks of my project phase mainly were occupied with many presentations that needed to be prepared, let to this result.
+
+But anyway. Storybook is fantastic, and I don't think I'll develop web applications without it any time soon.
+Let me tell you why I love Storybook so much.
+
+Storybook allows you to work at one component at a time in isolation without seeing the others. This advertises proper component modularisation so that the next time you want to work on a component, you can look at it in its most modularized form and interactively see how it behaves if you change specific component input properties.
+
+Any project newcomers can use Storybook to get a feel of the components that exist and what they do. And it's especially great for testing.
+That's why Storybook comes with great integration support for most popular testing libraries.
+I, for example, used its help to integrate Jest for Unit and Snapshot Tests and Cypress for Integration Tests.
+
+But before I integrated tests, I learned how to make testing the components even easier by dividing my components into two categories. [Presentational and Container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0). Presentational components are constructed so that they don't handle any business logic and focus on how to render the data with HTML and CSS. On the other hand, container components have all the business logic on how to work with the data but don't know how to display it. For that, they pass the data to presentational components.
+This separation of concern improves testability because now you can use unit tests to test the container components without worrying that the tests might break once the presentation of the data changes. Or you can snapshot test presentational components without worrying that they might break whenever the business logic changes. Testing becomes easy.
+
+So to summarize, Storybook:
+- with the help of Presentational and Container components makes testing easy
+- helps you document components by providing a UI with all components and examples of how to use them
+- makes development faster since you can view and work on one tiny component in complete isolation instead of needing to render your whole website
+
+Again, my storybook is deployed for everyone to see under https://dartcaller.github.io/web
 
 <a name="joker"/>
 
 ### :black_joker: Jest
-We currently use jest for snapshot testing the components to make sure we get notified about markup changes. See https://storybook.js.org/docs/vue/workflows/snapshot-testing for more info
+We currently use jest for snapshot testing the components to make sure we get notified about markup changes. See https://storybook.js.org/docs/vue/workflows/snapshot-testing for more info.
 
 <a name="rotating_light"/>
 
