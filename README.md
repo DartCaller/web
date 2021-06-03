@@ -146,6 +146,8 @@ $ npm run test:ci:e2e
 ```
 
 Currently, this repo is equipped with a few testing tools that range from linters over snapshot tests to integration tests.
+The tests are part of the CI / CD pipeline and are run on each push to the repository as it can be seen here https://github.com/DartCaller/web/actions.
+
 In the following paragraphs I will go through the different testing tools used.
 
 <a name="sparkles"/>
