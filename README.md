@@ -35,6 +35,7 @@ This repository contains the user-facing frontend, which enables dart game manag
 - Server Communication: [Axios](https://axios-http.com/docs/intro) & [Socket.io](https://socket.io/)
 - Testing: [Storybook](https://storybook.js.org/), [Cypress](https://www.cypress.io/) & [Jest](https://jestjs.io/)
 - Formatting: [Prettier](https://prettier.io/), [Eslint](https://eslint.org/) & [Styling](https://stylelint.io/)
+- Authentication: [Auth0](https://auth0.com/)
 
 <a name="computer"/>
 
@@ -83,7 +84,8 @@ $ npm run generate
 |REST_ADDRESS    |Root REST Endpoint |`https://dart-api.timon.codes`  |
 |WS_ADDRESS      |Websocket Endpoint |`wss://dart-api.timon.codes/ws` |
 
-Furthermore, I currently have the variables for the Authorization Grant Flow Endpoint hardcoded. So if you want to run this project locally, you might want to change [these lines here](https://github.com/DartCaller/web/blob/b77c71c3fd96cc300c71f2a0a22ca7297f269829/plugins/auth0.js#L9-L12) to use your authorization server of choice.
+In addition to the above ENV variables, I currently have the values for authentication hardcoded. Meaning which authentication server to use to authenticate. I use [Auth0](https://auth0.com/) and if you want to run this project locally, you might want to change [these lines here](https://github.com/DartCaller/web/blob/b77c71c3fd96cc300c71f2a0a22ca7297f269829/plugins/auth0.js#L9-L12) to use your authentication service of choice.
+You can also keep the values like they are, but then you will only be able to authenticate against my backend.
 
 <a name="lock"/>
 
@@ -102,7 +104,7 @@ To quote an excellent first explanation from [this article](https://www.komododi
 
 Feel free to open my storybook under https://dartcaller.github.io/web in a second tab so that the following descriptions are better understandable.
 
-With Storybook, you write a little "story" file for each frontend component, in which you import your component and show various use case examples ([here]() an example of such a story file in my repo). When you then start your Storybook UI locally, Storybook shows your component in an iFrame sandbox using the use case examples you specified. Showing all specified components on the left provides you with an organized environment and lets you interact with every component in isolation.
+With Storybook, you write a little "story" file for each frontend component, in which you import your component and show various use case examples ([here](https://github.com/DartCaller/web/blob/fde2510bb85df54d24f77accf9e7b5247cd5229c/components/common/modal/CorrectScore.stories.js) an example of such a story file in my repo). When you then start your Storybook UI locally, Storybook shows your component in an iFrame sandbox using the use case examples you specified. Showing all specified components on the left provides you with an organized environment and lets you interact with every component in isolation.
 
 #### :heart: Why I fell in love with Storybook
 I immediately want to start and respond to anyone saying, "If Storybook is so great, why did you use it so little? You barely have all components in it and a bare minimum amount of test cases". Yes, that's true. The thing is that I discovered Storybook at the very end of the project. This and the fact that the last weeks of my project phase mainly were occupied with many presentations that needed to be prepared, let to this result.
