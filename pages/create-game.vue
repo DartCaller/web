@@ -23,6 +23,7 @@ import settingsMenu from '~/components/gameCreation/settingsMenu.vue'
 export default {
   name: 'CreateGame',
   components: { styledButton, playerMenu, settingsMenu },
+  middleware: ['auth'],
   data: () => ({
     socket: null,
     players: [],

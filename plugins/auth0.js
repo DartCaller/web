@@ -72,14 +72,43 @@ class Auth0Util {
         (err, result) => {
           if (!err) {
             this.setToken(result.accessToken, result.idToken, result.expiresIn)
-          } else this.init('login')
+          } else {
+            this.login()
+          }
         }
       )
     }
   }
 
+  autoLogin(cb = () => ({})) {
+    this.webAuth.checkSession(
+      {
+        redirectUri: this.getBaseUrl() + '/callback',
+      },
+      (err, result) => {
+        if (!err) {
+          this.setToken(result.accessToken, result.idToken, result.expiresIn)
+          cb()
+          if (this.context.route.query.redirect) {
+            this.context.app.router.push(
+              decodeURIComponent(this.context.route.query.redirect)
+            )
+          } else {
+            this.context.app.router.push('/create-game')
+          }
+        } else {
+          this.login()
+        }
+      }
+    )
+  }
+
   login() {
-    this.init('login')
+    if (this.context.route.query.redirect) {
+      this.init('login', decodeURIComponent(this.context.route.query.redirect))
+    } else {
+      this.init('login')
+    }
   }
 }
 
