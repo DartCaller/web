@@ -5,15 +5,19 @@
         <h2>DartCaller</h2>
       </template>
       <template #right>
-        <NuxtLink to="/create-game">
-          <styledButton>Game</styledButton>
-        </NuxtLink>
-        <styledButton>Profile</styledButton>
-        <styledButton>Settings</styledButton>
-        <styledButton v-if="$store.state.accessToken === null" @click="login">
-          Login
-        </styledButton>
-        <styledButton v-else @click="logout">Logout</styledButton>
+        <template v-if="$store.state.accessToken === null">
+          <styledButton v-if="$store.state.accessToken === null" @click="login">
+            Login
+          </styledButton>
+        </template>
+        <template v-else>
+          <NuxtLink to="/create-game">
+            <styledButton>Game</styledButton>
+          </NuxtLink>
+          <styledButton @click="notImplemented">Profile</styledButton>
+          <styledButton @click="notImplemented">Settings</styledButton>
+          <styledButton @click="logout">Logout</styledButton>
+        </template>
       </template>
     </vs-navbar>
     <Nuxt class="flex_grow" />
@@ -38,6 +42,16 @@ export default {
     },
     logout() {
       this.$auth0.logout()
+    },
+    notImplemented() {
+      this.$vs.notification({
+        progress: 'auto',
+        position: 'top-center',
+        duration: 5000,
+        title: 'Not yet implemented',
+        text:
+          'But Timon, Pumba and the whole Lion King family is busy as a bee working on it.',
+      })
     },
   },
 }
