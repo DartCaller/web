@@ -159,7 +159,7 @@ export default {
       if (!this.newScoreIsValid) return
       this.$axios
         .post(
-          `http://localhost:8080/game/${this.gameID}/correctScore`,
+          `/game/${this.gameID}/correctScore`,
           JSON.stringify({
             playerId: this.chosenPlayerID,
             scoreString: `S${this.newScoreValue}S0S0`,
