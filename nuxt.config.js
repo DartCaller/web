@@ -21,6 +21,7 @@ export default {
     '@/plugins/vuesax',
     { src: '~/plugins/socket', ssr: false },
     { src: '~/plugins/countUp', ssr: false },
+    { src: '~/plugins/vue-typer', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

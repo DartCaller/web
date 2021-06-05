@@ -41,6 +41,7 @@
     "socket.io-client": "^2.3.0",
     "vue-countup-v2": "^4.0.0",
     "vue-svg-loader": "^0.16.0",
+    "vue-typer": "^1.2.0",
     "vuesax": "^4.0.1-alpha.25"
   },
   "devDependencies": {
