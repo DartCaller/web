@@ -3,7 +3,12 @@
     <div class="main_header">
       <h1>DartCaller</h1>
       <h2>
-        <vue-typer :text="subheader" erase-style="backspace" erase-delay="50" />
+        <vue-typer
+          :text="subheader"
+          erase-style="backspace"
+          erase-delay="50"
+          initial-action="erasing"
+        />
       </h2>
     </div>
   </div>
