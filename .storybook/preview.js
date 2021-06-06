@@ -5,6 +5,17 @@ import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import ICountUp from 'vue-countup-v2'
 
+import Socket from '../plugins/socket'
+
+Socket({ store: {}}, (name, plugin) => {
+  Vue.use({ install: (VueInstance) => {
+      VueInstance.prototype['$'+name] = plugin
+  }})
+})
+
+Vue.use({ install: (VueInstance) => {
+  VueInstance.prototype.$store = { state: {}, commit: () => ({}) }
+}})
 
 Vue.component('CountUp', ICountUp)
 Vue.use(Vuesax, {})
