@@ -684,7 +684,9 @@ exports[`Storyshots PureCorrectScore Default 1`] = `
     class="row"
   >
     <div>
-      <p>
+      <p
+        class="label"
+      >
         For Player:
       </p>
        
@@ -736,7 +738,9 @@ exports[`Storyshots PureCorrectScore Default 1`] = `
     </div>
      
     <div>
-      <p>
+      <p
+        class="label"
+      >
         Last Score:
       </p>
        
