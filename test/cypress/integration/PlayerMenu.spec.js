@@ -1,6 +1,8 @@
 describe('PlayerMenu', () => {
   it('should be able to add, name & remove a new player', () => {
-    cy.visit('http://localhost:6006/iframe.html?id=playermenu--default')
+    cy.visit(
+      'http://localhost:6006/iframe.html?id=gamecreation-playermenu--default'
+    )
     cy.getByData('player-menu__row').should('have.length', 1)
     cy.getByData('player-menu__add-row').click()
     cy.getByData('player-menu__row').should('have.length', 2)

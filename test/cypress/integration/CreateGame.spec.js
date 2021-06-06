@@ -1,7 +1,9 @@
 const mockWebSocket = { send: (data) => ({}) }
 describe('CreateGame', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:6006/iframe.html?id=creategame--default')
+    cy.visit(
+      'http://localhost:6006/iframe.html?id=gamecreation-creategame--default'
+    )
     cy.spy(mockWebSocket, 'send')
     cy.window().then((win) => {
       win.mockWebSocketSend = mockWebSocket.send
