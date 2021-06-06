@@ -1,5 +1,5 @@
 <template>
-  <PureCorrectScore
+  <CorrectScorePure
     :player-names="game.playerNames"
     :player-order="game.playerOrder"
     :current-player="game.currentPlayer"
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import PureCorrectScore from '~/components/common/modal/PureCorrectScore.vue'
+import CorrectScorePure from '~/components/common/modal/CorrectScorePure.vue'
 
 export default {
   name: 'Modal',
-  components: { PureCorrectScore },
+  components: { CorrectScorePure },
   data: () => ({
     allPlayers: [],
     chosenPlayerID: '',
