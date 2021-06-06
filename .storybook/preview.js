@@ -18,6 +18,15 @@ Vue.use({ install: (VueInstance) => {
 }})
 
 Vue.component('CountUp', ICountUp)
+Vue.component('NuxtLink', {
+  props:  {
+    to: {
+      type: String,
+      required: true
+    }
+  },
+  template: '<a :href="to"><slot /></a>'
+})
 Vue.use(Vuesax, {})
 
 export const parameters = {

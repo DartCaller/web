@@ -311,12 +311,12 @@ exports[`Storyshots CreateGame Default 1`] = `
                       <input
                         class="vs-input"
                         data-test="player-row__input"
-                        id="vs-input--50"
+                        id="vs-input--69"
                         placeholder=""
                       />
                       <label
                         class="vs-input__label"
-                        for="vs-input--50"
+                        for="vs-input--69"
                       >
                         Name
                       </label>
@@ -431,7 +431,7 @@ exports[`Storyshots CreateGame Default 1`] = `
               >
                 <input
                   class="vs-select__input simple"
-                  id="60"
+                  id="79"
                   readonly="readonly"
                 >
                   <button
@@ -453,11 +453,11 @@ exports[`Storyshots CreateGame Default 1`] = `
                 </input>
                 <label
                   class="vs-select__label vs-select__label--hidden"
-                  for="60"
+                  for="79"
                 />
                 <label
                   class="vs-select__label vs-select__label--hidden"
-                  for="60"
+                  for="79"
                 />
                 <!---->
                 <i
@@ -871,12 +871,12 @@ exports[`Storyshots PlayerMenu Default 1`] = `
                 <input
                   class="vs-input"
                   data-test="player-row__input"
-                  id="vs-input--86"
+                  id="vs-input--105"
                   placeholder=""
                 />
                 <label
                   class="vs-input__label"
-                  for="vs-input--86"
+                  for="vs-input--105"
                 >
                   Name
                 </label>
@@ -1104,7 +1104,7 @@ exports[`Storyshots PureCorrectScore Default 1`] = `
         >
           <input
             class="vs-select__input simple"
-            id="21"
+            id="40"
             readonly="readonly"
           >
              
@@ -1125,11 +1125,11 @@ exports[`Storyshots PureCorrectScore Default 1`] = `
           </input>
           <label
             class="vs-select__label vs-select__label--hidden"
-            for="21"
+            for="40"
           />
           <label
             class="vs-select__label vs-select__label--hidden"
-            for="21"
+            for="40"
           />
           <!---->
           <i
@@ -1158,12 +1158,12 @@ exports[`Storyshots PureCorrectScore Default 1`] = `
         >
           <input
             class="vs-input"
-            id="vs-input--30"
+            id="vs-input--49"
             placeholder=""
           />
           <label
             class="vs-input__label vs-input__label--hidden"
-            for="vs-input--30"
+            for="vs-input--49"
           />
           <div
             class="vs-input__affects"
@@ -1611,7 +1611,7 @@ exports[`Storyshots SettingsMenu Default 1`] = `
         >
           <input
             class="vs-select__input simple"
-            id="99"
+            id="118"
             readonly="readonly"
           >
             <button
@@ -1633,11 +1633,11 @@ exports[`Storyshots SettingsMenu Default 1`] = `
           </input>
           <label
             class="vs-select__label vs-select__label--hidden"
-            for="99"
+            for="118"
           />
           <label
             class="vs-select__label vs-select__label--hidden"
-            for="99"
+            for="118"
           />
           <!---->
           <i
@@ -1978,4 +1978,149 @@ exports[`Storyshots StyledButton Primary 1`] = `
     </p>
   </div>
 </button>
+`;
+
+exports[`Storyshots TheNavBarPure Default 1`] = `
+<div
+  class="vs-navbar-content nav box_shadow textWhite vsNavbarSquare vs-component--is-color"
+>
+  <div
+    class="vs-navbar"
+  >
+    <div
+      class="vs-navbar__left"
+    >
+      <h2>
+        DartCaller
+      </h2>
+    </div>
+    <div
+      class="vs-navbar__center"
+    />
+    <div
+      class="vs-navbar__right"
+    >
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <!---->
+           
+          <p
+            class=""
+          >
+            
+          Login
+        
+          </p>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="vs-navbar__line"
+    style="left: 0px; width: 0px;"
+  />
+</div>
+`;
+
+exports[`Storyshots TheNavBarPure Logged In 1`] = `
+<div
+  class="vs-navbar-content nav box_shadow textWhite vsNavbarSquare vs-component--is-color"
+>
+  <div
+    class="vs-navbar"
+  >
+    <div
+      class="vs-navbar__left"
+    >
+      <h2>
+        DartCaller
+      </h2>
+    </div>
+    <div
+      class="vs-navbar__center"
+    />
+    <div
+      class="vs-navbar__right"
+    >
+      <a
+        href="create-game"
+      >
+        <button
+          class="vs-button vs-button--null vs-button--size-null vs-button--default"
+        >
+          <div
+            class="vs-button__content"
+          >
+            <!---->
+             
+            <p
+              class=""
+            >
+              Game
+            </p>
+          </div>
+        </button>
+      </a>
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <!---->
+           
+          <p
+            class=""
+          >
+            
+          Profile
+        
+          </p>
+        </div>
+      </button>
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <!---->
+           
+          <p
+            class=""
+          >
+            
+          Settings
+        
+          </p>
+        </div>
+      </button>
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <!---->
+           
+          <p
+            class=""
+          >
+            
+          Logout
+        
+          </p>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="vs-navbar__line"
+    style="left: 0px; width: 0px;"
+  />
+</div>
 `;
