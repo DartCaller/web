@@ -2,7 +2,7 @@
   <the-nav-bar-pure
     :logged-in="loggedIn"
     :items="navItems"
-    :logged-in-items="loggedInNavItems"
+    :items-logged-in="loggedInNavItems"
   />
 </template>
 
