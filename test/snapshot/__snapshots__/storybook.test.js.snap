@@ -226,6 +226,407 @@ exports[`Storyshots ActionsPure In Game 1`] = `
 </div>
 `;
 
+exports[`Storyshots CreateGame Default 1`] = `
+<div
+  style="margin: 1em; padding: 1rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    class="create_game__container"
+    oninput="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+  >
+    <h1>
+      Create Game
+    </h1>
+     
+    <div
+      class="cards__container"
+    >
+      <div
+        class="player__card box_shadow"
+      >
+        <div>
+          <h2
+            class="mb text-center"
+          >
+            Players
+          </h2>
+           
+          <div
+            class="player_list"
+          >
+            <div
+              class="row__container player_row"
+              data-test="player-menu__row"
+            >
+              <div>
+                <div
+                  class="vs-avatar-content vs-avatar-content--size vs-component--is-color vs-change-color-badge"
+                  style="width: 30px; height: 30px; cursor: false;"
+                >
+                  <div
+                    class="vs-avatar"
+                  >
+                    <img
+                      alt="player image"
+                      src="~/assets/images/player.png"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="name"
+                >
+                  <div
+                    class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
+                    data-test="player-row__input"
+                    placeholder="Name"
+                  >
+                    <div
+                      class="vs-input-content vs-input-content--has-color"
+                    >
+                      <input
+                        class="vs-input"
+                        data-test="player-row__input"
+                        id="vs-input--50"
+                        placeholder=""
+                      />
+                      <label
+                        class="vs-input__label"
+                        for="vs-input--50"
+                      >
+                        Name
+                      </label>
+                      <div
+                        class="vs-input__affects"
+                      >
+                        <div
+                          class="vs-input__affects__1"
+                        />
+                        <div
+                          class="vs-input__affects__2"
+                        />
+                        <div
+                          class="vs-input__affects__3"
+                        />
+                        <div
+                          class="vs-input__affects__4"
+                        />
+                      </div>
+                    </div>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+              </div>
+               
+              <div>
+                <!---->
+                 
+                <svg
+                  class="delete_button"
+                  data-test="player-row__delete"
+                  fill="none"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M3.72007 4.22C3.86069 4.07955 4.05132 4.00066 4.25007 4.00066C4.44882 4.00066 4.63944 4.07955 4.78007 4.22L8.00007 7.44L11.2201 4.22C11.2888 4.14631 11.3716 4.08721 11.4636 4.04622C11.5556 4.00523 11.6549 3.98319 11.7556 3.98141C11.8563 3.97963 11.9563 3.99816 12.0497 4.03588C12.1431 4.0736 12.2279 4.12974 12.2991 4.20096C12.3704 4.27218 12.4265 4.35702 12.4642 4.4504C12.5019 4.54379 12.5205 4.64382 12.5187 4.74452C12.5169 4.84523 12.4949 4.94454 12.4539 5.03654C12.4129 5.12854 12.3538 5.21134 12.2801 5.28L9.06007 8.5L12.2801 11.72C12.3538 11.7887 12.4129 11.8715 12.4539 11.9635C12.4949 12.0555 12.5169 12.1548 12.5187 12.2555C12.5205 12.3562 12.5019 12.4562 12.4642 12.5496C12.4265 12.643 12.3704 12.7278 12.2991 12.799C12.2279 12.8703 12.1431 12.9264 12.0497 12.9641C11.9563 13.0018 11.8563 13.0204 11.7556 13.0186C11.6549 13.0168 11.5556 12.9948 11.4636 12.9538C11.3716 12.9128 11.2888 12.8537 11.2201 12.78L8.00007 9.56L4.78007 12.78C4.63789 12.9125 4.44984 12.9846 4.25554 12.9812C4.06124 12.9777 3.87586 12.899 3.73844 12.7616C3.60103 12.6242 3.52232 12.4388 3.51889 12.2445C3.51546 12.0502 3.58759 11.8622 3.72007 11.72L6.94007 8.5L3.72007 5.28C3.57962 5.13938 3.50073 4.94875 3.50073 4.75C3.50073 4.55125 3.57962 4.36063 3.72007 4.22Z"
+                    fill="#EE5622"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="addPlayer"
+          >
+            <button
+              class="vs-button vs-button--null vs-button--size-null vs-button--default"
+              data-test="player-menu__add-row"
+            >
+              <div
+                class="vs-button__content"
+              >
+                <svg
+                  class="icon"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.75 4.5a.75.75 0 01.75.75V11h5.75a.75.75 0 010 1.5H12.5v5.75a.75.75 0 01-1.5 0V12.5H5.25a.75.75 0 010-1.5H11V5.25a.75.75 0 01.75-.75z"
+                    fill="white"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                 
+                <p
+                  class=""
+                >
+                  
+      Add Player
+    
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="settings__card box_shadow"
+      >
+        <div>
+          <h2
+            class="mb text-center"
+          >
+            Settings
+          </h2>
+           
+          <div
+            class="row"
+          >
+            <p>
+              Game Mode
+            </p>
+             
+            <div
+              class="vs-select-content select"
+              data-test="create-game__game-mode"
+            >
+              <div
+                class="vs-select vs-select--state-null"
+              >
+                <input
+                  class="vs-select__input simple"
+                  id="60"
+                  readonly="readonly"
+                >
+                  <button
+                    class="vs-select__option isHover"
+                    data-test="create-game__game-mode__option_301"
+                  >
+                    
+        301
+      
+                  </button>
+                  <button
+                    class="vs-select__option activeOption isHover"
+                    data-test="create-game__game-mode__option_501"
+                  >
+                    
+        501
+      
+                  </button>
+                </input>
+                <label
+                  class="vs-select__label vs-select__label--hidden"
+                  for="60"
+                />
+                <label
+                  class="vs-select__label vs-select__label--hidden"
+                  for="60"
+                />
+                <!---->
+                <i
+                  class="vs-icon-arrow"
+                />
+              </div>
+              <!---->
+              <!---->
+              <!---->
+              <!---->
+            </div>
+          </div>
+           
+          <div
+            class="row"
+          >
+            <p>
+              Double-In
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <p>
+              Double-Out
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <p>
+              Automatic Dart Score Recognition
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <p>
+              Checkout Recommendations
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <button
+      class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      data-test="create-game__submit"
+    >
+      <div
+        class="vs-button__content"
+      >
+        <!---->
+         
+        <p
+          class=""
+        >
+          Start Game
+        </p>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots CurrentPlayer Default 1`] = `
 <div
   style="height: 19rem; margin: 1em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
@@ -461,6 +862,7 @@ exports[`Storyshots PlayerMenu Default 1`] = `
           >
             <div
               class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
+              data-test="player-row__input"
               placeholder="Name"
             >
               <div
@@ -468,12 +870,13 @@ exports[`Storyshots PlayerMenu Default 1`] = `
               >
                 <input
                   class="vs-input"
-                  id="vs-input--54"
+                  data-test="player-row__input"
+                  id="vs-input--86"
                   placeholder=""
                 />
                 <label
                   class="vs-input__label"
-                  for="vs-input--54"
+                  for="vs-input--86"
                 >
                   Name
                 </label>
@@ -507,6 +910,7 @@ exports[`Storyshots PlayerMenu Default 1`] = `
            
           <svg
             class="delete_button"
+            data-test="player-row__delete"
             fill="none"
             height="17"
             viewBox="0 0 16 17"
@@ -636,6 +1040,7 @@ exports[`Storyshots PlayerRow Default 1`] = `
     >
       <p
         class="label"
+        data-test="player-row__display"
       >
         
         Test
@@ -653,6 +1058,7 @@ exports[`Storyshots PlayerRow Default 1`] = `
      
     <svg
       class="delete_button"
+      data-test="player-row__delete"
       fill="none"
       height="17"
       viewBox="0 0 16 17"
@@ -1198,17 +1604,19 @@ exports[`Storyshots SettingsMenu Default 1`] = `
        
       <div
         class="vs-select-content select"
+        data-test="create-game__game-mode"
       >
         <div
           class="vs-select vs-select--state-null"
         >
           <input
             class="vs-select__input simple"
-            id="67"
+            id="99"
             readonly="readonly"
           >
             <button
               class="vs-select__option isHover"
+              data-test="create-game__game-mode__option_301"
             >
               
         301
@@ -1216,6 +1624,7 @@ exports[`Storyshots SettingsMenu Default 1`] = `
             </button>
             <button
               class="vs-select__option activeOption isHover"
+              data-test="create-game__game-mode__option_501"
             >
               
         501
@@ -1224,11 +1633,11 @@ exports[`Storyshots SettingsMenu Default 1`] = `
           </input>
           <label
             class="vs-select__label vs-select__label--hidden"
-            for="67"
+            for="99"
           />
           <label
             class="vs-select__label vs-select__label--hidden"
-            for="67"
+            for="99"
           />
           <!---->
           <i
