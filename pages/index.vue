@@ -6,7 +6,7 @@
         <vue-typer
           :text="subheader"
           erase-style="backspace"
-          erase-delay="50"
+          :erase-delay="50"
           initial-action="erasing"
         />
       </h2>
