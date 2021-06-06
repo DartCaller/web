@@ -1,5 +1,5 @@
 <template>
-  <vs-navbar class="nav box_shadow" color="#303030" text-white square>
+  <vs-navbar color="#303030" text-white square>
     <template #left>
       <h2>DartCaller</h2>
     </template>
