@@ -12,18 +12,28 @@
           class="input"
           :value="player.name"
           placeholder="Name"
+          data-test="player-row__input"
           @input="newName = $event"
           @blur="onSubmit"
           @keyup.enter="onSubmit"
         />
-        <p v-else class="label" @click="editMode = true">
+        <p
+          v-else
+          class="label"
+          data-test="player-row__display"
+          @click="editMode = true"
+        >
           {{ player.name }}
         </p>
       </div>
     </div>
     <div>
       <p v-if="!nameIsEmpty" class="gamesPlayed">{{ player.games }} games</p>
-      <delete-svg class="delete_button" @click="$emit('delete')" />
+      <delete-svg
+        class="delete_button"
+        data-test="player-row__delete"
+        @click="$emit('delete')"
+      />
     </div>
   </div>
 </template>
