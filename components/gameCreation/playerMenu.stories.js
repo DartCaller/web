@@ -3,7 +3,7 @@ import PlayerMenu from './playerMenu.vue'
 
 export default {
   component: PlayerMenu,
-  title: 'PlayerMenu',
+  title: 'GameCreation/PlayerMenu',
   exludeStories: /.*Data$/,
   args: {
     onInput: action('input'),
@@ -18,7 +18,7 @@ export default {
   decorators: [
     () => ({
       template:
-        '<div style="margin: 3em; padding: 2rem; border-radius: 1rem; background-color: #303030"><story/></div>',
+        '<div style="max-width: 35rem; margin: 3em; padding: 2rem; border-radius: 1rem; background-color: #303030"><story/></div>',
     }),
   ],
 }

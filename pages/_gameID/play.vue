@@ -15,6 +15,7 @@ import pureIngame from '~/components/inGame/pureIngame'
 export default {
   name: 'InGame',
   components: { pureIngame },
+  middleware: ['auth'],
   data: () => ({
     game: null,
     loading: null,

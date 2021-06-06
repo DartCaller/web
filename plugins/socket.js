@@ -1,3 +1,6 @@
+const isCypress = typeof window.Cypress !== 'undefined'
+const isStorybook = typeof window.__STORYBOOK_ADDONS !== 'undefined'
+
 class Socket {
   constructor({ store }) {
     this.socket = null
@@ -5,6 +8,7 @@ class Socket {
   }
 
   connect() {
+    if (isCypress || isStorybook) return true
     return new Promise((resolve, reject) => {
       const timeout = setTimeout(() => this.onFailedAuth(reject), 5000)
       this.socket = new WebSocket(process.env.WS_ADDRESS)
@@ -21,10 +25,13 @@ class Socket {
   send(message) {
     if (this.socket) {
       this.socket.send(JSON.stringify(message))
+    } else if (isCypress || isStorybook) {
+      window.mockWebSocketSend(JSON.stringify(message))
     } else throw new Error('Socket not connected')
   }
 
   onMessage(cb) {
+    if (isCypress || isStorybook) return
     if (this.socket) {
       this.socket.addEventListener('message', ({ data }) => {
         cb(JSON.parse(data))

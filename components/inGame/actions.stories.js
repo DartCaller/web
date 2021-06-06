@@ -2,7 +2,7 @@ import ActionsPure from './actionsPure.vue'
 
 export default {
   component: ActionsPure,
-  title: 'ActionsPure',
+  title: 'InGame/ActionsPure',
   exludeStories: /.*Data$/,
   decorators: [
     () => ({

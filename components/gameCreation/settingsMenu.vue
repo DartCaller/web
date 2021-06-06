@@ -5,6 +5,7 @@
       <p>Game Mode</p>
       <vs-select
         v-model="gameMode"
+        data-test="create-game__game-mode"
         color="#14A76C"
         class="select"
         @input="onChangeHandler"
@@ -14,6 +15,7 @@
           :key="mode"
           :label="mode"
           :value="mode"
+          :data-test="`create-game__game-mode__option_${mode}`"
         >
           {{ mode }}
         </vs-option>
