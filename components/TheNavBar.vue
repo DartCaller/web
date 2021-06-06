@@ -14,13 +14,13 @@ export default {
   components: { TheNavBarPure },
   data() {
     return {
-      navItems: [
+      loggedInNavItems: [
         { label: 'Game', href: 'create-game' },
         { label: 'Profile', clickHandler: this.notImplemented },
         { label: 'Settings', clickHandler: this.notImplemented },
         { label: 'Logout', clickHandler: this.logout },
       ],
-      loggedInNavItems: [{ label: 'Login', clickHandler: this.login }],
+      navItems: [{ label: 'Login', clickHandler: this.login }],
     }
   },
   computed: {
