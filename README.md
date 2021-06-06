@@ -126,7 +126,7 @@ So to summarize, Storybook:
 - helps you document components by providing a UI with all components and examples of how to use them
 - makes development faster since you can view and work on one tiny component in complete isolation instead of needing to render your whole website
 
-Again, my storybook is deployed for everyone to see under https://dartcaller.github.io/web
+Again, my storybook is deployed for everyone to see under https://dartcaller.github.io/web and I suffixed every Presentational Component with `Pure`.
 
 
 <a name="bug"/>
