@@ -23,6 +23,7 @@ export default {
     { src: '~/plugins/countUp', ssr: false },
     { src: '~/plugins/auth0', ssr: false },
     { src: '~/plugins/axios', ssr: false },
+    { src: '~/plugins/vue-typer', ssr: false },
   ],
 
   env: {

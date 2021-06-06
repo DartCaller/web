@@ -3,7 +3,7 @@
     <h2 class="colored mb text-center">Correct Score</h2>
     <div class="row">
       <div>
-        <p>For Player:</p>
+        <p class="label">For Player:</p>
         <vs-select
           v-model="chosenPlayerID"
           color="#14A76C"
@@ -24,7 +24,7 @@
         </vs-select>
       </div>
       <div>
-        <p>Last Score:</p>
+        <p class="label">Last Score:</p>
         <vs-input v-model="newScoreValue" class="input" border success>
           <template v-if="!newScoreIsValid" #message-danger> Invalid </template>
         </vs-input>
@@ -280,8 +280,8 @@ export default {
       display: flex;
       align-items: center;
 
-      :not(:first-child) {
-        margin-left: 10px;
+      .label {
+        margin-right: 10px;
       }
     }
 
@@ -290,7 +290,19 @@ export default {
     }
 
     .input {
-      max-width: 50px;
+      &::v-deep input {
+        max-width: 60px;
+        text-align: center;
+
+        &:focus {
+          padding-left: 9.5px;
+        }
+      }
+
+      &::v-deep .vs-input__message {
+        bottom: -2px;
+        margin: auto;
+      }
     }
 
     * {

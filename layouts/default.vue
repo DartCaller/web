@@ -1,21 +1,6 @@
 <template>
   <div class="pos_relative">
-    <vs-navbar class="nav box_shadow" color="#303030" text-white square>
-      <template #left>
-        <h2>DartCaller</h2>
-      </template>
-      <template #right>
-        <NuxtLink to="/create-game">
-          <styledButton>Game</styledButton>
-        </NuxtLink>
-        <styledButton>Profile</styledButton>
-        <styledButton>Settings</styledButton>
-        <styledButton v-if="$store.state.accessToken === null" @click="login">
-          Login
-        </styledButton>
-        <styledButton v-else @click="logout">Logout</styledButton>
-      </template>
-    </vs-navbar>
+    <Nav-bar class="nav box_shadow" />
     <Nuxt class="flex_grow" />
     <div id="loading_container" />
     <ModalSlot class="global_modal" />
@@ -23,22 +8,14 @@
 </template>
 
 <script>
-import styledButton from '~/components/common/StyledButton'
+import NavBar from '~/components/TheNavBar'
 import ModalSlot from '~/components/common/modal/ModalSlot'
 
 export default {
   name: 'DefaultLayout',
   components: {
-    styledButton,
+    NavBar,
     ModalSlot,
-  },
-  methods: {
-    login() {
-      this.$auth0.login()
-    },
-    logout() {
-      this.$auth0.logout()
-    },
   },
 }
 </script>

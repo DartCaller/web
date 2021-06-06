@@ -4,7 +4,7 @@ import StyledButton from './StyledButton.vue'
 export default {
   component: StyledButton,
   excludeStories: /.*Data$/,
-  title: 'StyledButton',
+  title: 'Common/StyledButton',
   argTypes: {
     icon: {
       control: {

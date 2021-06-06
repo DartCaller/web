@@ -12,7 +12,7 @@ export default {
       target: '#loading_container',
       scale: '1.3',
       type: 'circles',
-      text: 'Loading Game ...',
+      text: 'Login in ...',
       background: 'primary',
       opacity: 0.5,
       color: '#fff',
@@ -20,7 +20,11 @@ export default {
     if (this.checkIfAuthError()) {
       this.$auth0.setTokenByQuery()
       this.loading.close()
-      this.$router.replace({ path: '/' })
+      if (this.getStateFromUrl().charAt(0) === '/') {
+        this.$router.replace({ path: this.getStateFromUrl() })
+      } else {
+        this.$router.replace({ path: '/' })
+      }
     }
   },
   methods: {
@@ -48,6 +52,13 @@ export default {
       } else {
         return true
       }
+    },
+    getStateFromUrl() {
+      const hash = queryString.parse(location.hash)
+      if (typeof hash.state !== 'undefined' && hash.state !== null) {
+        return decodeURIComponent(hash.state)
+      }
+      return null
     },
   },
 }

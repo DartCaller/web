@@ -1,15 +1,20 @@
-import PureCorrectScore from './PureCorrectScore.vue'
+import CorrectScorePure from './CorrectScorePure.vue'
 
 export default {
-  component: PureCorrectScore,
-  title: 'PureCorrectScore',
+  component: CorrectScorePure,
+  title: 'InGame/CorrectScorePure',
   exludeStories: /.*Data$/,
+  decorators: [
+    () => ({
+      template: '<div style="max-width: 40rem; margin: 1em;"><story/></div>',
+    }),
+  ],
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { PureCorrectScore },
+  components: { CorrectScorePure },
   props: Object.keys(argTypes),
-  template: '<pureCorrectScore v-bind="$props"/>',
+  template: '<correctScorePure v-bind="$props"/>',
 })
 export const Default = Template.bind({})
 Default.args = {

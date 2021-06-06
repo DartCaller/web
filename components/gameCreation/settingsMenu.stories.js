@@ -3,7 +3,7 @@ import SettingsMenu from './settingsMenu.vue'
 
 export default {
   component: SettingsMenu,
-  title: 'SettingsMenu',
+  title: 'GameCreation/SettingsMenu',
   exludeStories: /.*Data$/,
   argTypes: {
     onInput: { table: { disable: true } },
@@ -15,7 +15,7 @@ export default {
   decorators: [
     () => ({
       template:
-        '<div style="margin: 3em; padding: 2rem; border-radius: 1rem; background-color: #303030"><story/></div>',
+        '<div style="max-width: 35rem; margin: 3em; padding: 2rem; border-radius: 1rem; background-color: #303030"><story/></div>',
     }),
   ],
 }

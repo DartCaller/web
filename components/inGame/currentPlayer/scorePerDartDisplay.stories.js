@@ -2,7 +2,7 @@ import ScorePerDartDisplay from './scorePerDartDisplay.vue'
 
 export default {
   component: ScorePerDartDisplay,
-  title: 'ScorePerDartDisplay',
+  title: 'InGame/ScorePerDartDisplay',
   exludeStories: /.*Data$/,
   decorators: [
     () => ({

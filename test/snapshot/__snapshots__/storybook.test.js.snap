@@ -1,6 +1,1239 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ActionsPure Finished 1`] = `
+exports[`Storyshots Common/StyledButton Default 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+      Submit
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Common/StyledButton Icon 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <svg
+      class="icon small"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.998 2.5A9.503 9.503 0 003.378 8H5.75a.75.75 0 010 1.5H2a1 1 0 01-1-1V4.75a.75.75 0 011.5 0v1.697A10.997 10.997 0 0111.998 1C18.074 1 23 5.925 23 12s-4.926 11-11.002 11C6.014 23 1.146 18.223 1 12.275a.75.75 0 011.5-.037 9.5 9.5 0 009.498 9.262c5.248 0 9.502-4.253 9.502-9.5s-4.254-9.5-9.502-9.5z"
+        fill="white"
+      />
+      <path
+        d="M12.5 7.25a.75.75 0 00-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 00.744-1.302L12.5 12.315V7.25z"
+      />
+    </svg>
+     
+    <p
+      class="small"
+    >
+      Submit
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Common/StyledButton Loading 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--loading vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+      Submit
+    </p>
+  </div>
+  <div
+    class="vs-button__loading"
+  />
+</button>
+`;
+
+exports[`Storyshots Common/StyledButton Primary 1`] = `
+<button
+  class="vs-button vs-button--null vs-button--size-null vs-button--default"
+  label="Submit"
+  onclick="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+>
+  <div
+    class="vs-button__content"
+  >
+    <!---->
+     
+    <p
+      class=""
+    >
+      Submit
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Common/TheNavBarPure Default 1`] = `
+<div
+  style="position: relative; margin: 0.5rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    class="vs-navbar-content textWhite vsNavbarSquare vs-component--is-color"
+  >
+    <div
+      class="vs-navbar"
+    >
+      <div
+        class="vs-navbar__left"
+      >
+        <h2>
+          DartCaller
+        </h2>
+      </div>
+      <div
+        class="vs-navbar__center"
+      />
+      <div
+        class="vs-navbar__right"
+      >
+        <button
+          class="vs-button vs-button--null vs-button--size-null vs-button--default"
+        >
+          <div
+            class="vs-button__content"
+          >
+            <!---->
+             
+            <p
+              class=""
+            >
+              
+          Login
+        
+            </p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="vs-navbar__line"
+      style="left: 0px; width: 0px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Common/TheNavBarPure Logged In 1`] = `
+<div
+  style="position: relative; margin: 0.5rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    class="vs-navbar-content textWhite vsNavbarSquare vs-component--is-color"
+  >
+    <div
+      class="vs-navbar"
+    >
+      <div
+        class="vs-navbar__left"
+      >
+        <h2>
+          DartCaller
+        </h2>
+      </div>
+      <div
+        class="vs-navbar__center"
+      />
+      <div
+        class="vs-navbar__right"
+      >
+        <a
+          href="create-game"
+        >
+          <button
+            class="vs-button vs-button--null vs-button--size-null vs-button--default"
+          >
+            <div
+              class="vs-button__content"
+            >
+              <!---->
+               
+              <p
+                class=""
+              >
+                Game
+              </p>
+            </div>
+          </button>
+        </a>
+        <button
+          class="vs-button vs-button--null vs-button--size-null vs-button--default"
+        >
+          <div
+            class="vs-button__content"
+          >
+            <!---->
+             
+            <p
+              class=""
+            >
+              
+          Profile
+        
+            </p>
+          </div>
+        </button>
+        <button
+          class="vs-button vs-button--null vs-button--size-null vs-button--default"
+        >
+          <div
+            class="vs-button__content"
+          >
+            <!---->
+             
+            <p
+              class=""
+            >
+              
+          Settings
+        
+            </p>
+          </div>
+        </button>
+        <button
+          class="vs-button vs-button--null vs-button--size-null vs-button--default"
+        >
+          <div
+            class="vs-button__content"
+          >
+            <!---->
+             
+            <p
+              class=""
+            >
+              
+          Logout
+        
+            </p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="vs-navbar__line"
+      style="left: 0px; width: 0px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots GameCreation/CreateGame Default 1`] = `
+<div
+  style="max-width: 76rem; max-height: 35rem; margin: 1em; padding: 1rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    class="create_game__container"
+  >
+    <h1>
+      Create Game
+    </h1>
+     
+    <div
+      class="cards__container"
+    >
+      <div
+        class="player__card box_shadow"
+      >
+        <div>
+          <h2
+            class="mb text-center"
+          >
+            Players
+          </h2>
+           
+          <div
+            class="player_list"
+          >
+            <div
+              class="row__container player_row"
+              data-test="player-menu__row"
+            >
+              <div>
+                <div
+                  class="vs-avatar-content vs-avatar-content--size vs-component--is-color vs-change-color-badge"
+                  style="width: 30px; height: 30px; cursor: false;"
+                >
+                  <div
+                    class="vs-avatar"
+                  >
+                    <img
+                      alt="player image"
+                      src="~/assets/images/player.png"
+                    />
+                  </div>
+                </div>
+                 
+                <div
+                  class="name"
+                >
+                  <div
+                    class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
+                    data-test="player-row__input"
+                    placeholder="Name"
+                  >
+                    <div
+                      class="vs-input-content vs-input-content--has-color"
+                    >
+                      <input
+                        class="vs-input"
+                        data-test="player-row__input"
+                        id="vs-input--72"
+                        placeholder=""
+                      />
+                      <label
+                        class="vs-input__label"
+                        for="vs-input--72"
+                      >
+                        Name
+                      </label>
+                      <div
+                        class="vs-input__affects"
+                      >
+                        <div
+                          class="vs-input__affects__1"
+                        />
+                        <div
+                          class="vs-input__affects__2"
+                        />
+                        <div
+                          class="vs-input__affects__3"
+                        />
+                        <div
+                          class="vs-input__affects__4"
+                        />
+                      </div>
+                    </div>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+              </div>
+               
+              <div>
+                <!---->
+                 
+                <svg
+                  class="delete_button"
+                  data-test="player-row__delete"
+                  fill="none"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M3.72007 4.22C3.86069 4.07955 4.05132 4.00066 4.25007 4.00066C4.44882 4.00066 4.63944 4.07955 4.78007 4.22L8.00007 7.44L11.2201 4.22C11.2888 4.14631 11.3716 4.08721 11.4636 4.04622C11.5556 4.00523 11.6549 3.98319 11.7556 3.98141C11.8563 3.97963 11.9563 3.99816 12.0497 4.03588C12.1431 4.0736 12.2279 4.12974 12.2991 4.20096C12.3704 4.27218 12.4265 4.35702 12.4642 4.4504C12.5019 4.54379 12.5205 4.64382 12.5187 4.74452C12.5169 4.84523 12.4949 4.94454 12.4539 5.03654C12.4129 5.12854 12.3538 5.21134 12.2801 5.28L9.06007 8.5L12.2801 11.72C12.3538 11.7887 12.4129 11.8715 12.4539 11.9635C12.4949 12.0555 12.5169 12.1548 12.5187 12.2555C12.5205 12.3562 12.5019 12.4562 12.4642 12.5496C12.4265 12.643 12.3704 12.7278 12.2991 12.799C12.2279 12.8703 12.1431 12.9264 12.0497 12.9641C11.9563 13.0018 11.8563 13.0204 11.7556 13.0186C11.6549 13.0168 11.5556 12.9948 11.4636 12.9538C11.3716 12.9128 11.2888 12.8537 11.2201 12.78L8.00007 9.56L4.78007 12.78C4.63789 12.9125 4.44984 12.9846 4.25554 12.9812C4.06124 12.9777 3.87586 12.899 3.73844 12.7616C3.60103 12.6242 3.52232 12.4388 3.51889 12.2445C3.51546 12.0502 3.58759 11.8622 3.72007 11.72L6.94007 8.5L3.72007 5.28C3.57962 5.13938 3.50073 4.94875 3.50073 4.75C3.50073 4.55125 3.57962 4.36063 3.72007 4.22Z"
+                    fill="#EE5622"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="addPlayer"
+          >
+            <button
+              class="vs-button vs-button--null vs-button--size-null vs-button--default"
+              data-test="player-menu__add-row"
+            >
+              <div
+                class="vs-button__content"
+              >
+                <svg
+                  class="icon"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.75 4.5a.75.75 0 01.75.75V11h5.75a.75.75 0 010 1.5H12.5v5.75a.75.75 0 01-1.5 0V12.5H5.25a.75.75 0 010-1.5H11V5.25a.75.75 0 01.75-.75z"
+                    fill="white"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                 
+                <p
+                  class=""
+                >
+                  
+      Add Player
+    
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="settings__card box_shadow"
+      >
+        <div>
+          <h2
+            class="mb text-center"
+          >
+            Settings
+          </h2>
+           
+          <div
+            class="row"
+          >
+            <p>
+              Game Mode
+            </p>
+             
+            <div
+              class="vs-select-content select"
+              data-test="create-game__game-mode"
+            >
+              <div
+                class="vs-select vs-select--state-null"
+              >
+                <input
+                  class="vs-select__input simple"
+                  id="82"
+                  readonly="readonly"
+                >
+                  <button
+                    class="vs-select__option isHover"
+                    data-test="create-game__game-mode__option_301"
+                  >
+                    
+        301
+      
+                  </button>
+                  <button
+                    class="vs-select__option activeOption isHover"
+                    data-test="create-game__game-mode__option_501"
+                  >
+                    
+        501
+      
+                  </button>
+                </input>
+                <label
+                  class="vs-select__label vs-select__label--hidden"
+                  for="82"
+                />
+                <label
+                  class="vs-select__label vs-select__label--hidden"
+                  for="82"
+                />
+                <!---->
+                <i
+                  class="vs-icon-arrow"
+                />
+              </div>
+              <!---->
+              <!---->
+              <!---->
+              <!---->
+            </div>
+          </div>
+           
+          <div
+            class="row"
+          >
+            <p>
+              Double-In
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <p>
+              Double-Out
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <p>
+              Automatic Dart Score Recognition
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <p>
+              Checkout Recommendations
+            </p>
+             
+            <div
+              class="vs-switch"
+              type="checkbox"
+            >
+              <input
+                class="vs-switch__input"
+                type="checkbox"
+              />
+              <div
+                class="vs-switch__circle"
+              />
+              <div
+                class="vs-switch__text on"
+              >
+                 On 
+              </div>
+              <div
+                class="vs-switch__text off"
+              >
+                 Off 
+              </div>
+              <div
+                class="vs-switch__background"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <button
+      class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      data-test="create-game__submit"
+    >
+      <div
+        class="vs-button__content"
+      >
+        <!---->
+         
+        <p
+          class=""
+        >
+          Start Game
+        </p>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots GameCreation/PlayerMenu Default 1`] = `
+<div
+  style="max-width: 35rem; margin: 3em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    oninput="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+  >
+    <h2
+      class="mb text-center"
+    >
+      Players
+    </h2>
+     
+    <div
+      class="player_list"
+    >
+      <div
+        class="row__container player_row"
+        data-test="player-menu__row"
+      >
+        <div>
+          <div
+            class="vs-avatar-content vs-avatar-content--size vs-component--is-color vs-change-color-badge"
+            style="width: 30px; height: 30px; cursor: false;"
+          >
+            <div
+              class="vs-avatar"
+            >
+              <img
+                alt="player image"
+                src="~/assets/images/player.png"
+              />
+            </div>
+          </div>
+           
+          <div
+            class="name"
+          >
+            <div
+              class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
+              data-test="player-row__input"
+              placeholder="Name"
+            >
+              <div
+                class="vs-input-content vs-input-content--has-color"
+              >
+                <input
+                  class="vs-input"
+                  data-test="player-row__input"
+                  id="vs-input--109"
+                  placeholder=""
+                />
+                <label
+                  class="vs-input__label"
+                  for="vs-input--109"
+                >
+                  Name
+                </label>
+                <div
+                  class="vs-input__affects"
+                >
+                  <div
+                    class="vs-input__affects__1"
+                  />
+                  <div
+                    class="vs-input__affects__2"
+                  />
+                  <div
+                    class="vs-input__affects__3"
+                  />
+                  <div
+                    class="vs-input__affects__4"
+                  />
+                </div>
+              </div>
+              <!---->
+              <!---->
+              <!---->
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div>
+          <!---->
+           
+          <svg
+            class="delete_button"
+            data-test="player-row__delete"
+            fill="none"
+            height="17"
+            viewBox="0 0 16 17"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M3.72007 4.22C3.86069 4.07955 4.05132 4.00066 4.25007 4.00066C4.44882 4.00066 4.63944 4.07955 4.78007 4.22L8.00007 7.44L11.2201 4.22C11.2888 4.14631 11.3716 4.08721 11.4636 4.04622C11.5556 4.00523 11.6549 3.98319 11.7556 3.98141C11.8563 3.97963 11.9563 3.99816 12.0497 4.03588C12.1431 4.0736 12.2279 4.12974 12.2991 4.20096C12.3704 4.27218 12.4265 4.35702 12.4642 4.4504C12.5019 4.54379 12.5205 4.64382 12.5187 4.74452C12.5169 4.84523 12.4949 4.94454 12.4539 5.03654C12.4129 5.12854 12.3538 5.21134 12.2801 5.28L9.06007 8.5L12.2801 11.72C12.3538 11.7887 12.4129 11.8715 12.4539 11.9635C12.4949 12.0555 12.5169 12.1548 12.5187 12.2555C12.5205 12.3562 12.5019 12.4562 12.4642 12.5496C12.4265 12.643 12.3704 12.7278 12.2991 12.799C12.2279 12.8703 12.1431 12.9264 12.0497 12.9641C11.9563 13.0018 11.8563 13.0204 11.7556 13.0186C11.6549 13.0168 11.5556 12.9948 11.4636 12.9538C11.3716 12.9128 11.2888 12.8537 11.2201 12.78L8.00007 9.56L4.78007 12.78C4.63789 12.9125 4.44984 12.9846 4.25554 12.9812C4.06124 12.9777 3.87586 12.899 3.73844 12.7616C3.60103 12.6242 3.52232 12.4388 3.51889 12.2445C3.51546 12.0502 3.58759 11.8622 3.72007 11.72L6.94007 8.5L3.72007 5.28C3.57962 5.13938 3.50073 4.94875 3.50073 4.75C3.50073 4.55125 3.57962 4.36063 3.72007 4.22Z"
+              fill="#EE5622"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="addPlayer"
+    >
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+        data-test="player-menu__add-row"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <svg
+            class="icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.75 4.5a.75.75 0 01.75.75V11h5.75a.75.75 0 010 1.5H12.5v5.75a.75.75 0 01-1.5 0V12.5H5.25a.75.75 0 010-1.5H11V5.25a.75.75 0 01.75-.75z"
+              fill="white"
+              fill-rule="evenodd"
+            />
+          </svg>
+           
+          <p
+            class=""
+          >
+            
+      Add Player
+    
+          </p>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots GameCreation/PlayerRow Default 1`] = `
+<div
+  style="max-width: 35rem; margin: 3em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    class="row__container"
+    ondelete="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+    oninput="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+  >
+    <div>
+      <div
+        class="vs-avatar-content vs-avatar-content--size vs-component--is-color vs-change-color-badge"
+        style="width: 30px; height: 30px; cursor: false;"
+      >
+        <div
+          class="vs-avatar"
+        >
+          <img
+            alt="player image"
+            src="~/assets/images/player.png"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="name"
+      >
+        <p
+          class="label"
+          data-test="player-row__display"
+        >
+          
+        Test
+      
+        </p>
+      </div>
+    </div>
+     
+    <div>
+      <p
+        class="gamesPlayed"
+      >
+        312 games
+      </p>
+       
+      <svg
+        class="delete_button"
+        data-test="player-row__delete"
+        fill="none"
+        height="17"
+        viewBox="0 0 16 17"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M3.72007 4.22C3.86069 4.07955 4.05132 4.00066 4.25007 4.00066C4.44882 4.00066 4.63944 4.07955 4.78007 4.22L8.00007 7.44L11.2201 4.22C11.2888 4.14631 11.3716 4.08721 11.4636 4.04622C11.5556 4.00523 11.6549 3.98319 11.7556 3.98141C11.8563 3.97963 11.9563 3.99816 12.0497 4.03588C12.1431 4.0736 12.2279 4.12974 12.2991 4.20096C12.3704 4.27218 12.4265 4.35702 12.4642 4.4504C12.5019 4.54379 12.5205 4.64382 12.5187 4.74452C12.5169 4.84523 12.4949 4.94454 12.4539 5.03654C12.4129 5.12854 12.3538 5.21134 12.2801 5.28L9.06007 8.5L12.2801 11.72C12.3538 11.7887 12.4129 11.8715 12.4539 11.9635C12.4949 12.0555 12.5169 12.1548 12.5187 12.2555C12.5205 12.3562 12.5019 12.4562 12.4642 12.5496C12.4265 12.643 12.3704 12.7278 12.2991 12.799C12.2279 12.8703 12.1431 12.9264 12.0497 12.9641C11.9563 13.0018 11.8563 13.0204 11.7556 13.0186C11.6549 13.0168 11.5556 12.9948 11.4636 12.9538C11.3716 12.9128 11.2888 12.8537 11.2201 12.78L8.00007 9.56L4.78007 12.78C4.63789 12.9125 4.44984 12.9846 4.25554 12.9812C4.06124 12.9777 3.87586 12.899 3.73844 12.7616C3.60103 12.6242 3.52232 12.4388 3.51889 12.2445C3.51546 12.0502 3.58759 11.8622 3.72007 11.72L6.94007 8.5L3.72007 5.28C3.57962 5.13938 3.50073 4.94875 3.50073 4.75C3.50073 4.55125 3.57962 4.36063 3.72007 4.22Z"
+          fill="#EE5622"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots GameCreation/SettingsMenu Default 1`] = `
+<div
+  style="max-width: 35rem; margin: 3em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
+>
+  <div
+    oninput="function actionHandler() {
+    var channel = _addons.addons.getChannel();
+
+    var id = (0, _v.default)();
+    var minDepth = 5; // anything less is really just storybook internals
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var normalizedArgs = args.length > 1 ? args : args[0];
+    var actionDisplayToEmit = {
+      id: id,
+      count: 0,
+      data: {
+        name: name,
+        args: normalizedArgs
+      },
+      options: Object.assign({}, actionOptions, {
+        depth: minDepth + (actionOptions.depth || 3),
+        allowFunction: actionOptions.allowFunction || false
+      })
+    };
+    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
+  }"
+  >
+    <h2
+      class="mb text-center"
+    >
+      Settings
+    </h2>
+     
+    <div
+      class="row"
+    >
+      <p>
+        Game Mode
+      </p>
+       
+      <div
+        class="vs-select-content select"
+        data-test="create-game__game-mode"
+      >
+        <div
+          class="vs-select vs-select--state-null"
+        >
+          <input
+            class="vs-select__input simple"
+            id="122"
+            readonly="readonly"
+          >
+            <button
+              class="vs-select__option isHover"
+              data-test="create-game__game-mode__option_301"
+            >
+              
+        301
+      
+            </button>
+            <button
+              class="vs-select__option activeOption isHover"
+              data-test="create-game__game-mode__option_501"
+            >
+              
+        501
+      
+            </button>
+          </input>
+          <label
+            class="vs-select__label vs-select__label--hidden"
+            for="122"
+          />
+          <label
+            class="vs-select__label vs-select__label--hidden"
+            for="122"
+          />
+          <!---->
+          <i
+            class="vs-icon-arrow"
+          />
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="row"
+    >
+      <p>
+        Double-In
+      </p>
+       
+      <div
+        class="vs-switch"
+        type="checkbox"
+      >
+        <input
+          class="vs-switch__input"
+          type="checkbox"
+        />
+        <div
+          class="vs-switch__circle"
+        />
+        <div
+          class="vs-switch__text on"
+        >
+           On 
+        </div>
+        <div
+          class="vs-switch__text off"
+        >
+           Off 
+        </div>
+        <div
+          class="vs-switch__background"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <p>
+        Double-Out
+      </p>
+       
+      <div
+        class="vs-switch"
+        type="checkbox"
+      >
+        <input
+          class="vs-switch__input"
+          type="checkbox"
+        />
+        <div
+          class="vs-switch__circle"
+        />
+        <div
+          class="vs-switch__text on"
+        >
+           On 
+        </div>
+        <div
+          class="vs-switch__text off"
+        >
+           Off 
+        </div>
+        <div
+          class="vs-switch__background"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <p>
+        Automatic Dart Score Recognition
+      </p>
+       
+      <div
+        class="vs-switch"
+        type="checkbox"
+      >
+        <input
+          class="vs-switch__input"
+          type="checkbox"
+        />
+        <div
+          class="vs-switch__circle"
+        />
+        <div
+          class="vs-switch__text on"
+        >
+           On 
+        </div>
+        <div
+          class="vs-switch__text off"
+        >
+           Off 
+        </div>
+        <div
+          class="vs-switch__background"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <p>
+        Checkout Recommendations
+      </p>
+       
+      <div
+        class="vs-switch"
+        type="checkbox"
+      >
+        <input
+          class="vs-switch__input"
+          type="checkbox"
+        />
+        <div
+          class="vs-switch__circle"
+        />
+        <div
+          class="vs-switch__text on"
+        >
+           On 
+        </div>
+        <div
+          class="vs-switch__text off"
+        >
+           Off 
+        </div>
+        <div
+          class="vs-switch__background"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InGame/ActionsPure Finished 1`] = `
 <div
   style="margin: 1em; padding: 1rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
 >
@@ -127,7 +1360,7 @@ exports[`Storyshots ActionsPure Finished 1`] = `
 </div>
 `;
 
-exports[`Storyshots ActionsPure In Game 1`] = `
+exports[`Storyshots InGame/ActionsPure In Game 1`] = `
 <div
   style="margin: 1em; padding: 1rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
 >
@@ -226,7 +1459,341 @@ exports[`Storyshots ActionsPure In Game 1`] = `
 </div>
 `;
 
-exports[`Storyshots CurrentPlayer Default 1`] = `
+exports[`Storyshots InGame/CorrectScorePure Default 1`] = `
+<div
+  style="max-width: 40rem; margin: 1em;"
+>
+  <div
+    class="correct_score_modal small"
+  >
+    <h2
+      class="colored mb text-center"
+    >
+      Correct Score
+    </h2>
+     
+    <div
+      class="row"
+    >
+      <div>
+        <p
+          class="label"
+        >
+          For Player:
+        </p>
+         
+        <div
+          class="vs-select-content select"
+        >
+          <div
+            class="vs-select vs-select--state-null"
+          >
+            <input
+              class="vs-select__input simple"
+              id="43"
+              readonly="readonly"
+            >
+               
+              <button
+                class="vs-select__option isHover"
+              >
+                
+          Bob
+        
+              </button>
+              <button
+                class="vs-select__option activeOption isHover"
+              >
+                
+          Alice
+        
+              </button>
+            </input>
+            <label
+              class="vs-select__label vs-select__label--hidden"
+              for="43"
+            />
+            <label
+              class="vs-select__label vs-select__label--hidden"
+              for="43"
+            />
+            <!---->
+            <i
+              class="vs-icon-arrow"
+            />
+          </div>
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+        </div>
+      </div>
+       
+      <div>
+        <p
+          class="label"
+        >
+          Last Score:
+        </p>
+         
+        <div
+          class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
+        >
+          <div
+            class="vs-input-content vs-input-content--has-color"
+          >
+            <input
+              class="vs-input"
+              id="vs-input--52"
+              placeholder=""
+            />
+            <label
+              class="vs-input__label vs-input__label--hidden"
+              for="vs-input--52"
+            />
+            <div
+              class="vs-input__affects"
+            >
+              <div
+                class="vs-input__affects__1"
+              />
+              <div
+                class="vs-input__affects__2"
+              />
+              <div
+                class="vs-input__affects__3"
+              />
+              <div
+                class="vs-input__affects__4"
+              />
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="hr"
+    />
+     
+    <h4
+      class="mb"
+    >
+      Score Preview
+    </h4>
+     
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="colored"
+          >
+            
+        Round
+      
+          </th>
+          <th
+            class="colored"
+          >
+            
+        Bob
+      
+          </th>
+          <th
+            class="colored"
+          >
+            
+        Alice
+      
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <td>
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 10 19"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="5"
+                cy="16"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 16)"
+              />
+               
+              <circle
+                cx="5"
+                cy="9.5"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 9.5)"
+              />
+               
+              <circle
+                cx="5"
+                cy="3"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 3)"
+              />
+            </svg>
+          </td>
+          <td>
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 10 19"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="5"
+                cy="16"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 16)"
+              />
+               
+              <circle
+                cx="5"
+                cy="9.5"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 9.5)"
+              />
+               
+              <circle
+                cx="5"
+                cy="3"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 3)"
+              />
+            </svg>
+          </td>
+          <td>
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 10 19"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="5"
+                cy="16"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 16)"
+              />
+               
+              <circle
+                cx="5"
+                cy="9.5"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 9.5)"
+              />
+               
+              <circle
+                cx="5"
+                cy="3"
+                fill="white"
+                r="2"
+                transform="rotate(-90 5 3)"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            
+          1
+        
+          </td>
+          <td>
+            
+          360
+        
+          </td>
+          <td>
+            
+          360
+        
+          </td>
+        </tr>
+        <tr>
+          <td>
+            
+          2
+        
+          </td>
+          <td>
+            
+          219
+        
+          </td>
+          <td>
+            
+          219
+        
+          </td>
+        </tr>
+      </tbody>
+    </table>
+     
+    <div
+      class="action_button"
+    >
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <!---->
+           
+          <p
+            class=""
+          >
+            
+      Cancel
+    
+          </p>
+        </div>
+      </button>
+       
+      <button
+        class="vs-button vs-button--null vs-button--size-null vs-button--default"
+      >
+        <div
+          class="vs-button__content"
+        >
+          <!---->
+           
+          <p
+            class=""
+          >
+             Apply 
+          </p>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InGame/CurrentPlayer Default 1`] = `
 <div
   style="height: 19rem; margin: 1em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
 >
@@ -397,606 +1964,7 @@ exports[`Storyshots CurrentPlayer Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots PlayerMenu Default 1`] = `
-<div
-  style="margin: 3em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
->
-  <div
-    oninput="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
-  >
-    <h2
-      class="mb text-center"
-    >
-      Players
-    </h2>
-     
-    <div
-      class="player_list"
-    >
-      <div
-        class="row__container player_row"
-        data-test="player-menu__row"
-      >
-        <div>
-          <div
-            class="vs-avatar-content vs-avatar-content--size vs-component--is-color vs-change-color-badge"
-            style="width: 30px; height: 30px; cursor: false;"
-          >
-            <div
-              class="vs-avatar"
-            >
-              <img
-                alt="player image"
-                src="~/assets/images/player.png"
-              />
-            </div>
-          </div>
-           
-          <div
-            class="name"
-          >
-            <div
-              class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
-              placeholder="Name"
-            >
-              <div
-                class="vs-input-content vs-input-content--has-color"
-              >
-                <input
-                  class="vs-input"
-                  id="vs-input--54"
-                  placeholder=""
-                />
-                <label
-                  class="vs-input__label"
-                  for="vs-input--54"
-                >
-                  Name
-                </label>
-                <div
-                  class="vs-input__affects"
-                >
-                  <div
-                    class="vs-input__affects__1"
-                  />
-                  <div
-                    class="vs-input__affects__2"
-                  />
-                  <div
-                    class="vs-input__affects__3"
-                  />
-                  <div
-                    class="vs-input__affects__4"
-                  />
-                </div>
-              </div>
-              <!---->
-              <!---->
-              <!---->
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <div>
-          <!---->
-           
-          <svg
-            class="delete_button"
-            fill="none"
-            height="17"
-            viewBox="0 0 16 17"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M3.72007 4.22C3.86069 4.07955 4.05132 4.00066 4.25007 4.00066C4.44882 4.00066 4.63944 4.07955 4.78007 4.22L8.00007 7.44L11.2201 4.22C11.2888 4.14631 11.3716 4.08721 11.4636 4.04622C11.5556 4.00523 11.6549 3.98319 11.7556 3.98141C11.8563 3.97963 11.9563 3.99816 12.0497 4.03588C12.1431 4.0736 12.2279 4.12974 12.2991 4.20096C12.3704 4.27218 12.4265 4.35702 12.4642 4.4504C12.5019 4.54379 12.5205 4.64382 12.5187 4.74452C12.5169 4.84523 12.4949 4.94454 12.4539 5.03654C12.4129 5.12854 12.3538 5.21134 12.2801 5.28L9.06007 8.5L12.2801 11.72C12.3538 11.7887 12.4129 11.8715 12.4539 11.9635C12.4949 12.0555 12.5169 12.1548 12.5187 12.2555C12.5205 12.3562 12.5019 12.4562 12.4642 12.5496C12.4265 12.643 12.3704 12.7278 12.2991 12.799C12.2279 12.8703 12.1431 12.9264 12.0497 12.9641C11.9563 13.0018 11.8563 13.0204 11.7556 13.0186C11.6549 13.0168 11.5556 12.9948 11.4636 12.9538C11.3716 12.9128 11.2888 12.8537 11.2201 12.78L8.00007 9.56L4.78007 12.78C4.63789 12.9125 4.44984 12.9846 4.25554 12.9812C4.06124 12.9777 3.87586 12.899 3.73844 12.7616C3.60103 12.6242 3.52232 12.4388 3.51889 12.2445C3.51546 12.0502 3.58759 11.8622 3.72007 11.72L6.94007 8.5L3.72007 5.28C3.57962 5.13938 3.50073 4.94875 3.50073 4.75C3.50073 4.55125 3.57962 4.36063 3.72007 4.22Z"
-              fill="#EE5622"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-     
-    <div
-      class="addPlayer"
-    >
-      <button
-        class="vs-button vs-button--null vs-button--size-null vs-button--default"
-        data-test="player-menu__add-row"
-      >
-        <div
-          class="vs-button__content"
-        >
-          <svg
-            class="icon"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.75 4.5a.75.75 0 01.75.75V11h5.75a.75.75 0 010 1.5H12.5v5.75a.75.75 0 01-1.5 0V12.5H5.25a.75.75 0 010-1.5H11V5.25a.75.75 0 01.75-.75z"
-              fill="white"
-              fill-rule="evenodd"
-            />
-          </svg>
-           
-          <p
-            class=""
-          >
-            
-      Add Player
-    
-          </p>
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots PlayerRow Default 1`] = `
-<div
-  class="row__container"
-  ondelete="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
-  oninput="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
->
-  <div>
-    <div
-      class="vs-avatar-content vs-avatar-content--size vs-component--is-color vs-change-color-badge"
-      style="width: 30px; height: 30px; cursor: false;"
-    >
-      <div
-        class="vs-avatar"
-      >
-        <img
-          alt="player image"
-          src="~/assets/images/player.png"
-        />
-      </div>
-    </div>
-     
-    <div
-      class="name"
-    >
-      <p
-        class="label"
-      >
-        
-        Test
-      
-      </p>
-    </div>
-  </div>
-   
-  <div>
-    <p
-      class="gamesPlayed"
-    >
-      312 games
-    </p>
-     
-    <svg
-      class="delete_button"
-      fill="none"
-      height="17"
-      viewBox="0 0 16 17"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        clip-rule="evenodd"
-        d="M3.72007 4.22C3.86069 4.07955 4.05132 4.00066 4.25007 4.00066C4.44882 4.00066 4.63944 4.07955 4.78007 4.22L8.00007 7.44L11.2201 4.22C11.2888 4.14631 11.3716 4.08721 11.4636 4.04622C11.5556 4.00523 11.6549 3.98319 11.7556 3.98141C11.8563 3.97963 11.9563 3.99816 12.0497 4.03588C12.1431 4.0736 12.2279 4.12974 12.2991 4.20096C12.3704 4.27218 12.4265 4.35702 12.4642 4.4504C12.5019 4.54379 12.5205 4.64382 12.5187 4.74452C12.5169 4.84523 12.4949 4.94454 12.4539 5.03654C12.4129 5.12854 12.3538 5.21134 12.2801 5.28L9.06007 8.5L12.2801 11.72C12.3538 11.7887 12.4129 11.8715 12.4539 11.9635C12.4949 12.0555 12.5169 12.1548 12.5187 12.2555C12.5205 12.3562 12.5019 12.4562 12.4642 12.5496C12.4265 12.643 12.3704 12.7278 12.2991 12.799C12.2279 12.8703 12.1431 12.9264 12.0497 12.9641C11.9563 13.0018 11.8563 13.0204 11.7556 13.0186C11.6549 13.0168 11.5556 12.9948 11.4636 12.9538C11.3716 12.9128 11.2888 12.8537 11.2201 12.78L8.00007 9.56L4.78007 12.78C4.63789 12.9125 4.44984 12.9846 4.25554 12.9812C4.06124 12.9777 3.87586 12.899 3.73844 12.7616C3.60103 12.6242 3.52232 12.4388 3.51889 12.2445C3.51546 12.0502 3.58759 11.8622 3.72007 11.72L6.94007 8.5L3.72007 5.28C3.57962 5.13938 3.50073 4.94875 3.50073 4.75C3.50073 4.55125 3.57962 4.36063 3.72007 4.22Z"
-        fill="#EE5622"
-        fill-rule="evenodd"
-      />
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Storyshots PureCorrectScore Default 1`] = `
-<div
-  class="correct_score_modal small"
->
-  <h2
-    class="colored mb text-center"
-  >
-    Correct Score
-  </h2>
-   
-  <div
-    class="row"
-  >
-    <div>
-      <p>
-        For Player:
-      </p>
-       
-      <div
-        class="vs-select-content select"
-      >
-        <div
-          class="vs-select vs-select--state-null"
-        >
-          <input
-            class="vs-select__input simple"
-            id="21"
-            readonly="readonly"
-          >
-             
-            <button
-              class="vs-select__option isHover"
-            >
-              
-          Bob
-        
-            </button>
-            <button
-              class="vs-select__option activeOption isHover"
-            >
-              
-          Alice
-        
-            </button>
-          </input>
-          <label
-            class="vs-select__label vs-select__label--hidden"
-            for="21"
-          />
-          <label
-            class="vs-select__label vs-select__label--hidden"
-            for="21"
-          />
-          <!---->
-          <i
-            class="vs-icon-arrow"
-          />
-        </div>
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-      </div>
-    </div>
-     
-    <div>
-      <p>
-        Last Score:
-      </p>
-       
-      <div
-        class="vs-input-parent input vs-input-parent--state-null vs-input-parent--border vs-component--success vs-component--is-color"
-      >
-        <div
-          class="vs-input-content vs-input-content--has-color"
-        >
-          <input
-            class="vs-input"
-            id="vs-input--30"
-            placeholder=""
-          />
-          <label
-            class="vs-input__label vs-input__label--hidden"
-            for="vs-input--30"
-          />
-          <div
-            class="vs-input__affects"
-          >
-            <div
-              class="vs-input__affects__1"
-            />
-            <div
-              class="vs-input__affects__2"
-            />
-            <div
-              class="vs-input__affects__3"
-            />
-            <div
-              class="vs-input__affects__4"
-            />
-          </div>
-        </div>
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-      </div>
-    </div>
-  </div>
-   
-  <div
-    class="hr"
-  />
-   
-  <h4
-    class="mb"
-  >
-    Score Preview
-  </h4>
-   
-  <table>
-    <thead>
-      <tr>
-        <th
-          class="colored"
-        >
-          
-        Round
-      
-        </th>
-        <th
-          class="colored"
-        >
-          
-        Bob
-      
-        </th>
-        <th
-          class="colored"
-        >
-          
-        Alice
-      
-        </th>
-      </tr>
-    </thead>
-     
-    <tbody>
-      <tr>
-        <td>
-          <svg
-            fill="none"
-            height="19"
-            viewBox="0 0 10 19"
-            width="10"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="5"
-              cy="16"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 16)"
-            />
-             
-            <circle
-              cx="5"
-              cy="9.5"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 9.5)"
-            />
-             
-            <circle
-              cx="5"
-              cy="3"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 3)"
-            />
-          </svg>
-        </td>
-        <td>
-          <svg
-            fill="none"
-            height="19"
-            viewBox="0 0 10 19"
-            width="10"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="5"
-              cy="16"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 16)"
-            />
-             
-            <circle
-              cx="5"
-              cy="9.5"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 9.5)"
-            />
-             
-            <circle
-              cx="5"
-              cy="3"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 3)"
-            />
-          </svg>
-        </td>
-        <td>
-          <svg
-            fill="none"
-            height="19"
-            viewBox="0 0 10 19"
-            width="10"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="5"
-              cy="16"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 16)"
-            />
-             
-            <circle
-              cx="5"
-              cy="9.5"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 9.5)"
-            />
-             
-            <circle
-              cx="5"
-              cy="3"
-              fill="white"
-              r="2"
-              transform="rotate(-90 5 3)"
-            />
-          </svg>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          
-          1
-        
-        </td>
-        <td>
-          
-          360
-        
-        </td>
-        <td>
-          
-          360
-        
-        </td>
-      </tr>
-      <tr>
-        <td>
-          
-          2
-        
-        </td>
-        <td>
-          
-          219
-        
-        </td>
-        <td>
-          
-          219
-        
-        </td>
-      </tr>
-    </tbody>
-  </table>
-   
-  <div
-    class="action_button"
-  >
-    <button
-      class="vs-button vs-button--null vs-button--size-null vs-button--default"
-    >
-      <div
-        class="vs-button__content"
-      >
-        <!---->
-         
-        <p
-          class=""
-        >
-          
-      Cancel
-    
-        </p>
-      </div>
-    </button>
-     
-    <button
-      class="vs-button vs-button--null vs-button--size-null vs-button--default"
-    >
-      <div
-        class="vs-button__content"
-      >
-        <!---->
-         
-        <p
-          class=""
-        >
-           Apply 
-        </p>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storyshots ScorePerDartDisplay Default 1`] = `
+exports[`Storyshots InGame/ScorePerDartDisplay Default 1`] = `
 <div
   style="margin: 1em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
 >
@@ -1146,423 +2114,4 @@ exports[`Storyshots ScorePerDartDisplay Default 1`] = `
     </div>
   </div>
 </div>
-`;
-
-exports[`Storyshots SettingsMenu Default 1`] = `
-<div
-  style="margin: 3em; padding: 2rem; border-radius: 1rem; background-color: rgb(48, 48, 48);"
->
-  <div
-    oninput="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
-  >
-    <h2
-      class="mb text-center"
-    >
-      Settings
-    </h2>
-     
-    <div
-      class="row"
-    >
-      <p>
-        Game Mode
-      </p>
-       
-      <div
-        class="vs-select-content select"
-      >
-        <div
-          class="vs-select vs-select--state-null"
-        >
-          <input
-            class="vs-select__input simple"
-            id="67"
-            readonly="readonly"
-          >
-            <button
-              class="vs-select__option isHover"
-            >
-              
-        301
-      
-            </button>
-            <button
-              class="vs-select__option activeOption isHover"
-            >
-              
-        501
-      
-            </button>
-          </input>
-          <label
-            class="vs-select__label vs-select__label--hidden"
-            for="67"
-          />
-          <label
-            class="vs-select__label vs-select__label--hidden"
-            for="67"
-          />
-          <!---->
-          <i
-            class="vs-icon-arrow"
-          />
-        </div>
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="row"
-    >
-      <p>
-        Double-In
-      </p>
-       
-      <div
-        class="vs-switch"
-        type="checkbox"
-      >
-        <input
-          class="vs-switch__input"
-          type="checkbox"
-        />
-        <div
-          class="vs-switch__circle"
-        />
-        <div
-          class="vs-switch__text on"
-        >
-           On 
-        </div>
-        <div
-          class="vs-switch__text off"
-        >
-           Off 
-        </div>
-        <div
-          class="vs-switch__background"
-        />
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <p>
-        Double-Out
-      </p>
-       
-      <div
-        class="vs-switch"
-        type="checkbox"
-      >
-        <input
-          class="vs-switch__input"
-          type="checkbox"
-        />
-        <div
-          class="vs-switch__circle"
-        />
-        <div
-          class="vs-switch__text on"
-        >
-           On 
-        </div>
-        <div
-          class="vs-switch__text off"
-        >
-           Off 
-        </div>
-        <div
-          class="vs-switch__background"
-        />
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <p>
-        Automatic Dart Score Recognition
-      </p>
-       
-      <div
-        class="vs-switch"
-        type="checkbox"
-      >
-        <input
-          class="vs-switch__input"
-          type="checkbox"
-        />
-        <div
-          class="vs-switch__circle"
-        />
-        <div
-          class="vs-switch__text on"
-        >
-           On 
-        </div>
-        <div
-          class="vs-switch__text off"
-        >
-           Off 
-        </div>
-        <div
-          class="vs-switch__background"
-        />
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <p>
-        Checkout Recommendations
-      </p>
-       
-      <div
-        class="vs-switch"
-        type="checkbox"
-      >
-        <input
-          class="vs-switch__input"
-          type="checkbox"
-        />
-        <div
-          class="vs-switch__circle"
-        />
-        <div
-          class="vs-switch__text on"
-        >
-           On 
-        </div>
-        <div
-          class="vs-switch__text off"
-        >
-           Off 
-        </div>
-        <div
-          class="vs-switch__background"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots StyledButton Default 1`] = `
-<button
-  class="vs-button vs-button--null vs-button--size-null vs-button--default"
-  label="Submit"
-  onclick="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
->
-  <div
-    class="vs-button__content"
-  >
-    <!---->
-     
-    <p
-      class=""
-    >
-      Submit
-    </p>
-  </div>
-</button>
-`;
-
-exports[`Storyshots StyledButton Icon 1`] = `
-<button
-  class="vs-button vs-button--null vs-button--size-null vs-button--default"
-  label="Submit"
-  onclick="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
->
-  <div
-    class="vs-button__content"
-  >
-    <svg
-      class="icon small"
-      height="24"
-      viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M11.998 2.5A9.503 9.503 0 003.378 8H5.75a.75.75 0 010 1.5H2a1 1 0 01-1-1V4.75a.75.75 0 011.5 0v1.697A10.997 10.997 0 0111.998 1C18.074 1 23 5.925 23 12s-4.926 11-11.002 11C6.014 23 1.146 18.223 1 12.275a.75.75 0 011.5-.037 9.5 9.5 0 009.498 9.262c5.248 0 9.502-4.253 9.502-9.5s-4.254-9.5-9.502-9.5z"
-        fill="white"
-      />
-      <path
-        d="M12.5 7.25a.75.75 0 00-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 00.744-1.302L12.5 12.315V7.25z"
-      />
-    </svg>
-     
-    <p
-      class="small"
-    >
-      Submit
-    </p>
-  </div>
-</button>
-`;
-
-exports[`Storyshots StyledButton Loading 1`] = `
-<button
-  class="vs-button vs-button--null vs-button--size-null vs-button--loading vs-button--default"
-  label="Submit"
-  onclick="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
->
-  <div
-    class="vs-button__content"
-  >
-    <!---->
-     
-    <p
-      class=""
-    >
-      Submit
-    </p>
-  </div>
-  <div
-    class="vs-button__loading"
-  />
-</button>
-`;
-
-exports[`Storyshots StyledButton Primary 1`] = `
-<button
-  class="vs-button vs-button--null vs-button--size-null vs-button--default"
-  label="Submit"
-  onclick="function actionHandler() {
-    var channel = _addons.addons.getChannel();
-
-    var id = (0, _v.default)();
-    var minDepth = 5; // anything less is really just storybook internals
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    var normalizedArgs = args.length > 1 ? args : args[0];
-    var actionDisplayToEmit = {
-      id: id,
-      count: 0,
-      data: {
-        name: name,
-        args: normalizedArgs
-      },
-      options: Object.assign({}, actionOptions, {
-        depth: minDepth + (actionOptions.depth || 3),
-        allowFunction: actionOptions.allowFunction || false
-      })
-    };
-    channel.emit(_constants.EVENT_ID, actionDisplayToEmit);
-  }"
->
-  <div
-    class="vs-button__content"
-  >
-    <!---->
-     
-    <p
-      class=""
-    >
-      Submit
-    </p>
-  </div>
-</button>
 `;

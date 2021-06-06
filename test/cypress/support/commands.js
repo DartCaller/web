@@ -7,19 +7,28 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getByData', (dataSelector, options = {}) => {
+  const extraSelector = options.extraSelector ? options.extraSelector : ''
+  cy.get(`[data-test=${dataSelector}]${extraSelector}`, options)
+})
+
+Cypress.Commands.add(
+  'addRowAndTypePlayerName',
+  (name, { addRow = true } = {}) => {
+    if (addRow) cy.getByData('player-menu__add-row').click()
+    cy.getByData('player-row__input')
+      .last()
+      .type(name + '{enter}')
+  }
+)
+
+// Special Util function to select values from Vuesax dropdown menus
+Cypress.Commands.add(
+  'vsSelect',
+  { prevSubject: 'element' },
+  (subject, optionSelector) => {
+    cy.wrap(subject).click()
+    cy.getByData(optionSelector, { extraSelector: ':visible' }).click()
+  }
+)

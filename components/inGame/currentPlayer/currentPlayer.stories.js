@@ -2,7 +2,7 @@ import CurrentPlayer from './currentPlayer.vue'
 
 export default {
   component: CurrentPlayer,
-  title: 'CurrentPlayer',
+  title: 'InGame/CurrentPlayer',
   exludeStories: /.*Data$/,
   decorators: [
     () => ({
