@@ -34,20 +34,6 @@ export default {
     settings: {},
     loading: false,
   }),
-  async mounted() {
-    try {
-      await this.$socket.connect()
-    } catch (e) {
-      this.$vs.notification({
-        progress: 'auto',
-        position: 'top-center',
-        duration: 5000,
-        title: 'Not Authenticated',
-        text: e,
-        color: 'danger',
-      })
-    }
-  },
   methods: {
     startGame() {
       this.loading = true
