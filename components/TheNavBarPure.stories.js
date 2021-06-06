@@ -4,7 +4,13 @@ import TheNavBarPure from './TheNavBarPure'
 export default {
   component: TheNavBarPure,
   excludeStories: /.*Data$/,
-  title: 'TheNavBarPure',
+  title: 'Common/TheNavBarPure',
+  decorators: [
+    () => ({
+      template:
+        '<div style="position: relative; margin: 0.5rem; background-color: #303030"><story/></div>',
+    }),
+  ],
 }
 
 const Template = (args, { argTypes }) => ({

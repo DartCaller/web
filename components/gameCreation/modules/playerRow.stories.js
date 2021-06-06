@@ -3,7 +3,7 @@ import PlayerRow from './playerRow.vue'
 
 export default {
   component: PlayerRow,
-  title: 'PlayerRow',
+  title: 'GameCreation/PlayerRow',
   exludeStories: /.*Data$/,
   args: {
     onInput: action('input'),
@@ -13,9 +13,12 @@ export default {
     onDelete: { table: { disable: true } },
     onInput: { table: { disable: true } },
   },
-  parameters: {
-    backgrounds: { default: 'gray' },
-  },
+  decorators: [
+    () => ({
+      template:
+        '<div style="max-width: 35rem; margin: 3em; padding: 2rem; border-radius: 1rem; background-color: #303030"><story/></div>',
+    }),
+  ],
 }
 
 const Template = (args, { argTypes }) => ({

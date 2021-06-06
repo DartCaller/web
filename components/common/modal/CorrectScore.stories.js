@@ -2,8 +2,13 @@ import CorrectScorePure from './CorrectScorePure.vue'
 
 export default {
   component: CorrectScorePure,
-  title: 'CorrectScorePure',
+  title: 'InGame/CorrectScorePure',
   exludeStories: /.*Data$/,
+  decorators: [
+    () => ({
+      template: '<div style="max-width: 40rem; margin: 1em;"><story/></div>',
+    }),
+  ],
 }
 
 const Template = (args, { argTypes }) => ({

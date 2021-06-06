@@ -1,13 +1,9 @@
-import { action } from '@storybook/addon-actions'
 import CreateGame from './createGame'
 
 export default {
   component: CreateGame,
-  title: 'CreateGame',
+  title: 'GameCreation/CreateGame',
   exludeStories: /.*Data$/,
-  args: {
-    onInput: action('input'),
-  },
   argTypes: {
     onInput: { table: { disable: true } },
   },
@@ -18,7 +14,7 @@ export default {
   decorators: [
     () => ({
       template:
-        '<div style="margin: 1em; padding: 1rem; border-radius: 1rem; background-color: #303030"><story/></div>',
+        '<div style="max-width: 76rem; max-height: 35rem; margin: 1em; padding: 1rem; border-radius: 1rem; background-color: #303030"><story/></div>',
     }),
   ],
 }
